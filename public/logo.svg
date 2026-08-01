@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="520" height="180">
+  <defs>
+    <style>
+      .brand-dark { fill: #111111; font-family: 'Outfit', 'Inter', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 52px; letter-spacing: 4px; }
+      .brand-red { fill: #EE1C25; font-family: 'Outfit', 'Inter', 'Helvetica Neue', sans-serif; font-weight: 800; font-size: 52px; letter-spacing: 4px; }
+      .tm-red { fill: #EE1C25; font-family: 'Outfit', 'Inter', 'Helvetica Neue', sans-serif; font-weight: 700; font-size: 18px; }
+      .sub-title { fill: #111111; font-family: 'Outfit', 'Inter', 'Helvetica Neue', sans-serif; font-weight: 700; font-size: 16.5px; letter-spacing: 6.5px; text-transform: uppercase; }
+      .tag-line { fill: #64748B; font-family: 'Inter', 'Helvetica Neue', sans-serif; font-weight: 500; font-size: 13.5px; letter-spacing: 7px; text-transform: uppercase; }
+    </style>
+  </defs>
+
+  <!-- 2x2 Icon Grid -->
+  <g transform="translate(10, 30)">
+    <rect x="0" y="0" width="22" height="22" rx="4" fill="#8C0E1E" />
+    <rect x="26" y="0" width="22" height="22" rx="4" fill="#EE1C25" />
+    <rect x="0" y="26" width="22" height="22" rx="4" fill="#FF4D30" />
+    <rect x="26" y="26" width="22" height="22" rx="4" fill="#E5185D" />
+  </g>
+
+  <!-- Brand Typography -->
+  <!-- "SWIS" in dark/black -->
+  <text x="75" y="70" class="brand-dark">SWIS</text>
+  
+  <!-- "ZT" in Red -->
+  <text x="245" y="70" class="brand-red">ZT</text>
+
+  <!-- Stylized Chevron 'A' without crossbar -->
+  <path d="M 335 70 L 354 30 L 373 70" stroke="#EE1C25" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="miter" fill="none" />
+
+  <!-- TM Symbol -->
+  <text x="380" y="38" class="tm-red">TM</text>
+
+  <!-- Subtitle: HOTEL & HOSPITALITY SERVICES -->
+  <text x="40" y="118" class="sub-title">HOTEL &amp; HOSPITALITY SERVICES</text>
+
+  <!-- Tagline: CARE. COMFORT. EXCELLENCE. -->
+  <text x="80" y="152" class="tag-line">CARE. COMFORT. EXCELLENCE.</text>
+</svg>
