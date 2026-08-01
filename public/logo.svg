@@ -25,10 +25,10 @@
   <text x="245" y="70" class="brand-red">ZT</text>
 
   <!-- Stylized Chevron 'A' without crossbar -->
-  <path d="M 335 70 L 354 30 L 373 70" stroke="#EE1C25" stroke-width="8.5" stroke-linecap="square" stroke-linejoin="miter" fill="none" />
+  <path d="M 333 66.5 L 350 37 L 367 66.5" stroke="#EE1C25" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
 
   <!-- TM Symbol -->
-  <text x="380" y="38" class="tm-red">TM</text>
+  <text x="375" y="38" class="tm-red">TM</text>
 
   <!-- Subtitle: HOTEL & HOSPITALITY SERVICES -->
   <text x="40" y="118" class="sub-title">HOTEL &amp; HOSPITALITY SERVICES</text>

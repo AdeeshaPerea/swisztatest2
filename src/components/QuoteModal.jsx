@@ -21,7 +21,7 @@ export default function QuoteModal({ isOpen, onClose }) {
     'Housekeeping',
     'Laundry Services',
     'Catering & F&B',
-    'Maintenance',
+    'Facility Management & Maintenance',
     'Concierge',
     'Procurement'
   ];

@@ -63,13 +63,13 @@ export default function Logo({
             ZT
             {/* Custom Apex Chevron 'A' */}
             <svg 
-              width={`${20 * scale}`} 
-              height={`${20 * scale}`} 
+              width={`${18 * scale}`} 
+              height={`${18 * scale}`} 
               viewBox="0 0 24 24" 
               fill="none" 
-              style={{ display: 'inline-block', marginLeft: '1px', verticalAlign: 'middle' }}
+              style={{ display: 'inline-block', marginLeft: '2px', verticalAlign: 'baseline', transform: 'translateY(-1px)' }}
             >
-              <path d="M 4 22 L 12 4 L 20 22" stroke="#EE1C25" strokeWidth="4.2" strokeLinecap="round" strokeLinejoin="miter" />
+              <path d="M 3.5 20.5 L 12 6 L 20.5 20.5" stroke="#EE1C25" strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
           <sup style={{ color: textColor, fontSize: `${0.55 * scale}rem`, fontWeight: 800, marginLeft: '3px', position: 'relative', top: '-0.55em', lineHeight: 1 }}>TM</sup>

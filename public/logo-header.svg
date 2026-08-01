@@ -22,10 +22,10 @@
   <text x="145" y="32" class="header-brand-red">ZT</text>
 
   <!-- Stylized Chevron Apex 'A' -->
-  <path d="M 197 32 L 209 8 L 221 32" stroke="#EE1C25" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="miter" fill="none" />
+  <path d="M 195 30 L 205 13 L 215 30" stroke="#EE1C25" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
 
   <!-- TM Symbol -->
-  <text x="226" y="14" class="header-tm">TM</text>
+  <text x="221" y="14" class="header-tm">TM</text>
 
   <!-- Subtitle -->
   <text x="54" y="48" class="header-sub">HOTEL &amp; HOSPITALITY SERVICES</text>

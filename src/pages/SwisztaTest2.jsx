@@ -26,7 +26,7 @@ export default function SwisztaTest2({
     sites: 150,
     professionals: 10000,
     years: 50,
-    guests: 30
+    guests: 1
   });
 
   const totalVideoSeconds = 138; // 02:18
@@ -164,7 +164,7 @@ export default function SwisztaTest2({
     },
     {
       id: 'maintenance',
-      title: 'Engineering & Facility Management',
+      title: 'Facility Management & Maintenance',
       image: '/images/maintenance_hero.jpg',
       icon: '🔧',
       description: 'Reliable, efficient and sustainable facilities management solutions.'
@@ -499,7 +499,7 @@ export default function SwisztaTest2({
       <section className="numbers-band">
         <div className="container numbers-grid">
           <div className="number">
-            <strong>30M+</strong>
+            <strong>1M+</strong>
             <small>Guests Served Annually</small>
           </div>
           <div className="number">
@@ -630,7 +630,7 @@ export default function SwisztaTest2({
             <a href="#services">Concierge &amp; Guest Services</a>
             <a href="#services">Food &amp; Beverage</a>
             <a href="#services">Laundry &amp; Linen</a>
-            <a href="#services">Engineering &amp; Facility Management</a>
+            <a href="#services">Facility Management &amp; Maintenance</a>
           </div>
 
           <div className="footer-col">
