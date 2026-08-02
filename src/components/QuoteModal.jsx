@@ -56,7 +56,7 @@ export default function QuoteModal({ isOpen, onClose }) {
             <CheckCircle size={64} style={{ color: '#C8102E', margin: '0 auto 16px' }} />
             <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '10px' }}>Quote Request Submitted!</h3>
             <p style={{ color: '#657380', fontSize: '0.95rem', marginBottom: '24px' }}>
-              Thank you, <strong>{formData.name}</strong>. A SWISZTA hospitality operational specialist will review your property details for <strong>{formData.propertyName || 'your property'}</strong> and send a tailored proposal shortly.
+              Thank you, <strong>{formData.name}</strong>. A SWISZTA hotel operational specialist will review your property details for <strong>{formData.propertyName || 'your property'}</strong> and send a tailored proposal shortly.
             </p>
             <button className="btn btn-red" onClick={handleReset}>
               CLOSE WINDOW

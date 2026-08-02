@@ -2,12 +2,12 @@ import React from 'react';
 
 /**
  * Official SWISZTA Logo Component
- * @param {string} variant - 'light' (default, black text) or 'dark' (white text for dark backgrounds)
- * @param {string} size - 'sm' | 'md' | 'lg'
- * @param {boolean} showIcon - whether to show the 2x2 grid icon
- * @param {string} className - extra CSS classes
- * @param {object} style - inline styles
- * @param {function} onClick - click event handler
+ * Matches official brand guidelines:
+ * - SWIS in dark/white
+ * - Z in Red (#ED1C24)
+ * - T in dark/white
+ * - A in Red Chevron Apex stroke
+ * - Subtitle: HOTEL SERVICES
  */
 export default function Logo({
   variant = 'light',
@@ -18,11 +18,9 @@ export default function Logo({
   onClick
 }) {
   const isDark = variant === 'dark';
-
-  // Size scaling multipliers
   const scale = size === 'sm' ? 0.75 : size === 'lg' ? 1.25 : 1;
-
-  const textColor = isDark ? '#FFFFFF' : '#111111';
+  const textColor = isDark ? '#FFFFFF' : '#1F1F1F';
+  const subtitleColor = isDark ? '#E0B45C' : '#1F1F1F';
 
   return (
     <div 
@@ -37,7 +35,6 @@ export default function Logo({
         ...style
       }}
     >
-      {/* Brand Name SWISZTA™ (Icon Grid optional) */}
       <div style={{ display: 'flex', alignItems: 'center', gap: `${10 * scale}px` }}>
         
         {/* 2x2 Square Icon Grid */}
@@ -49,30 +46,47 @@ export default function Logo({
             fill="none" 
             style={{ flexShrink: 0, display: 'block' }}
           >
-            <rect x="0" y="0" width="22" height="22" rx="4" fill="#8C0E1E" />
-            <rect x="26" y="0" width="22" height="22" rx="4" fill="#EE1C25" />
-            <rect x="0" y="26" width="22" height="22" rx="4" fill="#FF4D30" />
-            <rect x="26" y="26" width="22" height="22" rx="4" fill="#E5185D" />
+            <rect x="0" y="0" width="22" height="22" rx="4.5" fill="#D32F2F" />
+            <rect x="26" y="0" width="22" height="22" rx="4.5" fill="#ED1C24" />
+            <rect x="0" y="26" width="22" height="22" rx="4.5" fill="#FF5722" />
+            <rect x="26" y="26" width="22" height="22" rx="4.5" fill="#E91E63" />
           </svg>
         )}
 
-        {/* SWISZTA™ Typography with Black TM */}
-        <div style={{ display: 'flex', alignItems: 'baseline', fontFamily: 'Outfit, Inter, sans-serif', fontWeight: 800, fontSize: `${1.5 * scale}rem`, letterSpacing: '1px' }}>
-          <span style={{ color: textColor }}>SWIS</span>
-          <span style={{ color: '#EE1C25', display: 'inline-flex', alignItems: 'baseline' }}>
-            ZT
-            {/* Custom Apex Chevron 'A' */}
+        {/* SWISZTA Typography & HOTEL SERVICES Subtitle */}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'baseline', 
+            fontFamily: 'Outfit, Jost, sans-serif', 
+            fontWeight: 800, 
+            fontSize: `${1.45 * scale}rem`, 
+            letterSpacing: '0.5px' 
+          }}>
+            <span style={{ color: textColor }}>SWIS</span>
+            <span style={{ color: '#ED1C24' }}>Z</span>
+            <span style={{ color: textColor }}>T</span>
             <svg 
-              width={`${18 * scale}`} 
-              height={`${18 * scale}`} 
+              width={`${17 * scale}`} 
+              height={`${17 * scale}`} 
               viewBox="0 0 24 24" 
               fill="none" 
-              style={{ display: 'inline-block', marginLeft: '2px', verticalAlign: 'baseline', transform: 'translateY(-1px)' }}
+              style={{ display: 'inline-block', marginLeft: '1px', verticalAlign: 'baseline', transform: 'translateY(-1px)' }}
             >
-              <path d="M 3.5 20.5 L 12 6 L 20.5 20.5" stroke="#EE1C25" strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M 3.5 20.5 L 12 5 L 20.5 20.5" stroke="#ED1C24" strokeWidth="4.2" strokeLinecap="square" strokeLinejoin="miter" />
             </svg>
+          </div>
+          <span style={{ 
+            fontFamily: 'Jost, sans-serif', 
+            fontWeight: 700, 
+            fontSize: `${0.52 * scale}rem`, 
+            letterSpacing: '3.2px', 
+            color: subtitleColor,
+            textTransform: 'uppercase',
+            marginTop: '2px'
+          }}>
+            HOTEL SERVICES
           </span>
-          <sup style={{ color: textColor, fontSize: `${0.55 * scale}rem`, fontWeight: 800, marginLeft: '3px', position: 'relative', top: '-0.55em', lineHeight: 1 }}>TM</sup>
         </div>
       </div>
     </div>

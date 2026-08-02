@@ -98,8 +98,8 @@
 }
 
 .swiszta-test2 .section-eyebrow.center {
-  text-align: center;
-  margin-bottom: 40px;
+  text-align: left;
+  margin-bottom: 24px;
   position: relative;
 }
 
@@ -431,7 +431,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.65) contrast(1.1);
+  filter: brightness(0.92) contrast(1.05);
   transform: scale(1.03);
   transition: transform 10s ease;
 }
@@ -443,36 +443,21 @@
 .swiszta-test2 .hero-scene {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(115deg, rgba(58,13,16,0.92) 0%, rgba(107,17,24,0.65) 45%, rgba(107,17,24,0.3) 100%),
-    radial-gradient(ellipse 70% 90% at 78% 30%, rgba(224,180,92,0.22), transparent 60%);
+  background: linear-gradient(90deg, rgba(45, 10, 13, 0.95) 0%, rgba(45, 10, 13, 0.82) 40%, rgba(45, 10, 13, 0.15) 75%, transparent 100%);
 }
 
 .swiszta-test2 .scene-figure {
-  position: absolute;
-  right: 6%;
-  bottom: 0;
-  width: 42%;
-  height: 88%;
-  background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
-  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
-  filter: blur(0.5px);
+  display: none;
 }
 
 .swiszta-test2 .scene-linens {
-  position: absolute;
-  right: 2%;
-  bottom: 8%;
-  width: 30%;
-  height: 30%;
-  background: repeating-linear-gradient(115deg, rgba(255,255,255,0.10) 0 14px, rgba(255,255,255,0.02) 14px 28px);
-  border-radius: var(--radius-md);
+  display: none;
 }
 
 .swiszta-test2 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(58,13,16,0.7), transparent 50%);
+  background: linear-gradient(0deg, rgba(45, 10, 13, 0.5) 0%, transparent 35%);
 }
 
 .swiszta-test2 .hero-content {
@@ -480,7 +465,9 @@
   z-index: 2;
   padding-top: 60px;
   padding-bottom: 110px;
-  max-width: 660px;
+  max-width: 580px;
+  margin-left: 0;
+  text-align: left;
 }
 
 .swiszta-test2 .eyebrow {
@@ -658,7 +645,7 @@
 .swiszta-test2 .service-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(58, 13, 16, 0.4), transparent 60%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, transparent 60%);
 }
 
 .swiszta-test2 .service-icon {
@@ -671,7 +658,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  margin: -26px auto 16px;
+  margin: -26px 0 16px 20px;
   border: 4px solid var(--white);
   box-shadow: 0 4px 12px rgba(58, 13, 16, 0.25);
   position: relative;
@@ -680,15 +667,15 @@
 
 .swiszta-test2 .service-card h3 {
   font-size: 1.05rem;
-  text-align: center;
-  padding: 0 18px;
+  text-align: left;
+  padding: 0 20px;
   margin-bottom: 10px;
   color: var(--maroon-950);
 }
 
 .swiszta-test2 .service-card p {
-  text-align: center;
-  padding: 0 18px;
+  text-align: left;
+  padding: 0 20px;
   font-size: 0.85rem;
   color: var(--ink-500);
   line-height: 1.55;
@@ -699,10 +686,11 @@
 .swiszta-test2 .link-more {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 6px;
   width: 100%;
-  text-align: center;
+  padding: 0 20px;
+  text-align: left;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -784,35 +772,36 @@
 .swiszta-test2 .about-scene-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(140deg, rgba(58,13,16,0.65), rgba(107,17,24,0.4) 60%, rgba(164,29,39,0.3));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
 }
 
 .swiszta-test2 .watch-btn {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(58, 13, 16, 0.85);
+  left: 20px;
+  bottom: 20px;
+  top: auto;
+  transform: none;
+  background: rgba(58, 13, 16, 0.88);
   color: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 50px;
-  padding: 14px 26px;
+  padding: 12px 22px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.8rem;
+  gap: 10px;
+  font-size: 0.78rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 600;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transition: all 0.3s ease;
 }
 
 .swiszta-test2 .watch-btn:hover {
   background: var(--maroon-700);
   border-color: var(--gold-400);
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translateY(-2px);
 }
 
 /* ============ Why choose ============ */
@@ -830,8 +819,8 @@
 .swiszta-test2 .why-item {
   background: var(--white);
   border-radius: var(--radius-md);
-  padding: 28px 16px;
-  text-align: center;
+  padding: 24px 20px;
+  text-align: left;
   box-shadow: 0 10px 26px -14px rgba(58, 13, 16, 0.18);
   border: 1px solid rgba(58, 13, 16, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

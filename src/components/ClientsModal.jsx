@@ -13,7 +13,7 @@ export default function ClientsModal({ isOpen, onClose }) {
     { name: 'Hilton Hotels & Resorts', tier: 'Luxury Hotel', location: 'Perth, WA', services: 'Housekeeping & Maintenance' },
     { name: 'Marriott International', tier: 'Global Brand', location: 'Adelaide, SA', services: 'Laundry & Procurement' },
     { name: 'Hyatt Hotels', tier: '5-Star Resort', location: 'Gold Coast, QLD', services: 'Housekeeping & F&B' },
-    { name: 'Novotel Melbourne', tier: 'Boutique Hotel', location: 'Melbourne, VIC', services: 'Complete Hospitality Service' },
+    { name: 'Novotel Melbourne', tier: 'Boutique Hotel', location: 'Melbourne, VIC', services: 'Complete Hotel Service' },
     { name: 'Crown Hotels', tier: 'Luxury Hotel', location: 'Melbourne, VIC', services: 'Maintenance & Concierge' },
     { name: 'Radisson Blu', tier: 'Global Brand', location: 'Sydney, NSW', services: 'Laundry Logistics' }
   ];
@@ -31,7 +31,7 @@ export default function ClientsModal({ isOpen, onClose }) {
 
         <div className="modal-header">
           <h3 className="modal-title">Our Premier Clients & Partners</h3>
-          <p className="modal-subtitle">Trusted by leading hotel chains, luxury resorts, and boutique hospitality properties worldwide.</p>
+          <p className="modal-subtitle">Trusted by leading hotel chains, luxury resorts, and boutique hotel properties worldwide.</p>
         </div>
 
         {/* Filter Badges */}

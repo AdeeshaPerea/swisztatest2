@@ -1,32 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 56" width="360" height="56" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 56" width="340" height="56" fill="none">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;700;800&amp;family=Outfit:wght@800&amp;display=swap');
-      .header-brand-dark { fill: #3A0D10; font-family: 'Outfit', 'Jost', 'Segoe UI', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 1.5px; }
-      .header-brand-red { fill: #EE1C25; font-family: 'Outfit', 'Jost', 'Segoe UI', sans-serif; font-weight: 800; font-size: 30px; letter-spacing: 1.5px; }
-      .header-tm { fill: #3A0D10; font-family: 'Jost', sans-serif; font-weight: 800; font-size: 11px; }
-      .header-sub { fill: #6B1118; font-family: 'Jost', 'Segoe UI', sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 2.8px; text-transform: uppercase; }
+      @import url('https://fonts.googleapis.com/css2?family=Jost:wght@700;800&amp;family=Outfit:wght@800;900&amp;display=swap');
+      .header-brand-dark { fill: #1F1F1F; font-family: 'Outfit', 'Jost', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 0.5px; }
+      .header-brand-red { fill: #ED1C24; font-family: 'Outfit', 'Jost', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 0.5px; }
+      .header-sub { fill: #1F1F1F; font-family: 'Jost', 'Segoe UI', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 3.8px; text-transform: uppercase; }
     </style>
   </defs>
 
   <!-- 2x2 Icon Grid -->
-  <g transform="translate(2, 6)">
-    <rect x="0" y="0" width="19" height="19" rx="3.5" fill="#8C0E1E" />
-    <rect x="22" y="0" width="19" height="19" rx="3.5" fill="#EE1C25" />
-    <rect x="0" y="22" width="19" height="19" rx="3.5" fill="#FF4D30" />
-    <rect x="22" y="22" width="19" height="19" rx="3.5" fill="#E5185D" />
+  <g transform="translate(2, 5)">
+    <rect x="0" y="0" width="20" height="20" rx="4.5" fill="#D32F2F" />
+    <rect x="23" y="0" width="20" height="20" rx="4.5" fill="#ED1C24" />
+    <rect x="0" y="23" width="20" height="20" rx="4.5" fill="#FF5722" />
+    <rect x="23" y="23" width="20" height="20" rx="4.5" fill="#E91E63" />
   </g>
 
-  <!-- Brand Typography -->
-  <text x="54" y="32" class="header-brand-dark">SWIS</text>
-  <text x="145" y="32" class="header-brand-red">ZT</text>
+  <!-- Brand Typography: SWIS (dark) + Z (red) + T (dark) + A (red chevron) -->
+  <text x="56" y="34" class="header-brand-dark">SWIS</text>
+  <text x="144" y="34" class="header-brand-red">Z</text>
+  <text x="167" y="34" class="header-brand-dark">T</text>
 
-  <!-- Stylized Chevron Apex 'A' -->
-  <path d="M 195 30 L 205 13 L 215 30" stroke="#EE1C25" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-
-  <!-- TM Symbol -->
-  <text x="221" y="14" class="header-tm">TM</text>
+  <!-- Stylized Chevron Apex 'A' in Red -->
+  <path d="M 191 33 L 202 12 L 213 33" stroke="#ED1C24" stroke-width="4.8" stroke-linecap="square" stroke-linejoin="miter" fill="none" />
 
   <!-- Subtitle -->
-  <text x="54" y="48" class="header-sub">HOTEL &amp; HOSPITALITY SERVICES</text>
+  <text x="56" y="49" class="header-sub">HOTEL SERVICES</text>
 </svg>

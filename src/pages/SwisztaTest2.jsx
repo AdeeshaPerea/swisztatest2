@@ -217,7 +217,7 @@ export default function SwisztaTest2({
       <header className="site-header" id="siteHeaderTest2">
         <div className="container nav-inner">
           <a href="#top" className="logo" onClick={(e) => handleNavClick(e, 'top')}>
-            <img src="/logo-header.svg" alt="Swiszta Hotel &amp; Hospitality Services" className="site-logo-img" />
+            <img src="/logo-header.svg" alt="Swiszta Hotel Services" className="site-logo-img" />
           </a>
 
           <nav className={`main-nav ${navOpen ? 'nav-open' : ''}`}>
@@ -264,8 +264,8 @@ export default function SwisztaTest2({
         </div>
 
         <div className="container hero-content">
-          <p className="eyebrow">Trusted Hospitality Partner &mdash; Est. 1982</p>
-          <h1>Elevating<br />Hospitality<br /><span class="text-accent">Every Day</span></h1>
+          <p className="eyebrow">Trusted Hotel Services Partner &mdash; Est. 1982</p>
+          <h1>Elevating<br />Hotel Services<br /><span className="text-accent">Every Day</span></h1>
           <p className="hero-copy">
             Housekeeping, guest services, food &amp; beverage and facility management &mdash; 
             delivered by one dependable partner, so every stay feels effortless.
@@ -368,7 +368,7 @@ export default function SwisztaTest2({
       {/* Core Services Section */}
       <section className="services" id="services">
         <div className="container">
-          <p className="section-eyebrow center">&mdash; Our Core Services &mdash;</p>
+          <p className="section-eyebrow">&mdash; Our Core Services &mdash;</p>
           <div className="services-grid">
             {servicesData.map((svc) => (
               <article className="service-card" key={svc.id}>
@@ -400,7 +400,7 @@ export default function SwisztaTest2({
             <p className="section-eyebrow">About Swiszta</p>
             <h2>50+ Years of<br /><span className="text-accent">Trust &amp; Excellence</span></h2>
             <p>
-              Since 1982, Swiszta has been at the forefront of hospitality services, partnering with the 
+              Since 1982, Swiszta has been at the forefront of hotel services, partnering with the 
               world's leading hotels to deliver integrated solutions that create exceptional experiences, 
               build trust and make a positive impact.
             </p>
@@ -431,7 +431,7 @@ export default function SwisztaTest2({
       {/* Why Choose Section */}
       <section className="why" id="standard">
         <div className="container">
-          <p className="section-eyebrow center">&mdash; Why Choose Swiszta &mdash;</p>
+          <p className="section-eyebrow">&mdash; Why Choose Swiszta &mdash;</p>
           <div className="why-grid">
             <div className="why-item">
               <span className="why-icon">🛡️</span>
@@ -471,7 +471,7 @@ export default function SwisztaTest2({
       <section className="partners">
         <div className="container">
           <div className="partners-header">
-            <p className="section-eyebrow center">&mdash; Proud Partner of Leading Hotel Brands &mdash;</p>
+            <p className="section-eyebrow">&mdash; Proud Partner of Leading Hotel Brands &mdash;</p>
             <button className="partner-portfolio-btn" onClick={onOpenClients}>
               View Client Portfolio <ArrowUpRight size={14} />
             </button>
@@ -522,7 +522,7 @@ export default function SwisztaTest2({
         <div className="container careers-inner">
           <div className="careers-copy">
             <p className="section-eyebrow eyebrow-light">Join Our Team</p>
-            <h2>Build a Career in<br /><span className="text-accent">Hospitality Excellence</span></h2>
+            <h2>Build a Career in<br /><span className="text-accent">Hotel Services Excellence</span></h2>
             <p>Be part of a passionate team that takes pride in delivering extraordinary experiences every day.</p>
             <button className="btn btn-light" onClick={onOpenQuote}>
               Explore Careers <span className="arrow">&rarr;</span>
@@ -540,7 +540,7 @@ export default function SwisztaTest2({
       {/* News Section */}
       <section className="news" id="news">
         <div className="container">
-          <p className="section-eyebrow center">&mdash; What's New &mdash;</p>
+          <p className="section-eyebrow">&mdash; What's New &mdash;</p>
           <div className="news-grid">
             <article className="news-card">
               <div 
@@ -562,7 +562,7 @@ export default function SwisztaTest2({
               >
                 <span className="news-date"><strong>25</strong>APR</span>
               </div>
-              <h4>New Training Academy Launched for Excellence in Hospitality</h4>
+              <h4>New Training Academy Launched for Excellence in Hotel Services</h4>
               <a href="#news" className="link-more" onClick={(e) => { e.preventDefault(); onOpenQuote(); }}>
                 Read more <span className="arrow">&rarr;</span>
               </a>
@@ -602,7 +602,7 @@ export default function SwisztaTest2({
         <div className="container footer-grid">
           <div className="footer-brand">
             <a href="#top" className="logo" onClick={(e) => { e.preventDefault(); scrollToTop(); }}>
-              <img src="/logo-footer.svg" alt="Swiszta Hotel &amp; Hospitality Services" className="site-logo-img footer-logo-img" />
+              <img src="/logo-footer.svg" alt="Swiszta Hotel Services" className="site-logo-img footer-logo-img" />
             </a>
             <p>Care. Comfort. Excellence.</p>
             <div className="footer-social">
