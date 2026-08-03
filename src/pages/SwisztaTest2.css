@@ -281,7 +281,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 82px;
+  height: 76px;
   gap: 24px;
 }
 
@@ -289,6 +289,20 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+}
+
+.swiszta-test2 .brand-name-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  color: var(--maroon-900);
+  text-decoration: none;
+}
+
+.swiszta-test2 .footer-brand-text {
+  color: var(--white);
 }
 
 .swiszta-test2 .logo-icon-img {
@@ -299,7 +313,7 @@
 }
 
 .swiszta-test2 .site-logo-img {
-  height: 48px;
+  height: 52px;
   width: auto;
   max-width: 320px;
   object-fit: contain;
@@ -307,7 +321,7 @@
 }
 
 .swiszta-test2 .footer-logo-img {
-  height: 54px;
+  height: 56px;
   max-width: 340px;
 }
 

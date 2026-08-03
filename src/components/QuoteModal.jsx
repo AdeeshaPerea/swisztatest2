@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, CheckCircle, Send } from 'lucide-react';
+import Logo from './Logo';
 
 export default function QuoteModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -65,6 +66,9 @@ export default function QuoteModal({ isOpen, onClose }) {
         ) : (
           <div>
             <div className="modal-header">
+              <div style={{ marginBottom: '12px' }}>
+                <Logo size="sm" />
+              </div>
               <h3 className="modal-title">Request a Custom Proposal</h3>
               <p className="modal-subtitle">Tell us about your property and service requirements to get a tailored quote.</p>
             </div>

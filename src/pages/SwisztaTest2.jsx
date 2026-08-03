@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './SwisztaTest2.css';
+import Logo from '../components/Logo';
 import { 
   Play, Pause, ArrowRight, Phone, Mail, Volume2, VolumeX, Settings, Maximize2, 
   ChevronUp, CheckCircle, Award, Globe, Building, Users, Clock, 
@@ -217,7 +218,7 @@ export default function SwisztaTest2({
       <header className="site-header" id="siteHeaderTest2">
         <div className="container nav-inner">
           <a href="#top" className="logo" onClick={(e) => handleNavClick(e, 'top')}>
-            <img src="/logo-header.svg" alt="Swiszta Hotel Services" className="site-logo-img" />
+            <Logo variant="light" size="md" />
           </a>
 
           <nav className={`main-nav ${navOpen ? 'nav-open' : ''}`}>
@@ -602,7 +603,7 @@ export default function SwisztaTest2({
         <div className="container footer-grid">
           <div className="footer-brand">
             <a href="#top" className="logo" onClick={(e) => { e.preventDefault(); scrollToTop(); }}>
-              <img src="/logo-footer.svg" alt="Swiszta Hotel Services" className="site-logo-img footer-logo-img" />
+              <Logo variant="dark" size="md" />
             </a>
             <p>Care. Comfort. Excellence.</p>
             <div className="footer-social">

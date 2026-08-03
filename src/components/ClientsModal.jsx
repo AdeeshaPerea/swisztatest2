@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Building, MapPin } from 'lucide-react';
+import Logo from './Logo';
 
 export default function ClientsModal({ isOpen, onClose }) {
   const [filter, setFilter] = useState('All');
@@ -30,6 +31,9 @@ export default function ClientsModal({ isOpen, onClose }) {
         </button>
 
         <div className="modal-header">
+          <div style={{ marginBottom: '12px' }}>
+            <Logo size="sm" />
+          </div>
           <h3 className="modal-title">Our Premier Clients & Partners</h3>
           <p className="modal-subtitle">Trusted by leading hotel chains, luxury resorts, and boutique hotel properties worldwide.</p>
         </div>
