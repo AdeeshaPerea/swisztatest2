@@ -7,11 +7,15 @@
   --maroon-600: #a41d27;
   --gold-500: #c9962f;
   --gold-400: #e0b45c;
-  --cream-50: #fbf7ef;
-  --cream-100: #f4ecdd;
-  --ink-900: #211613;
-  --ink-700: #4a3936;
-  --ink-500: #77645f;
+  --gold-300: #f3d68c;
+  --gold-200: #faebd0;
+  --gold-100: #fef7e7;
+  --cream-50: #fbf8f3;
+  --cream-100: #f4eee3;
+  --cream-200: #eae1d2;
+  --ink-900: #1c1113;
+  --ink-700: #3b2b2e;
+  --ink-500: #574649;
   --white: #ffffff;
 
   --font-display: 'Playfair Display', Georgia, serif;
@@ -21,7 +25,7 @@
   --radius-md: 10px;
   --radius-lg: 16px;
   --shadow-card: 0 18px 40px -18px rgba(58,13,16,0.35);
-  --container-w: 1200px;
+  --container-w: 1400px;
 
   font-family: var(--font-body);
   color: var(--ink-900);
@@ -119,15 +123,15 @@
 
 /* ============ Version Switcher Ribbon ============ */
 .swiszta-version-ribbon {
-  background: linear-gradient(90deg, #111827 0%, #1f2937 100%);
-  color: #f3f4f6;
+  background: linear-gradient(90deg, #6b1118 0%, #8a1620 100%);
+  color: #ffffff;
   padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e0b45c;
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   z-index: 1000;
   position: relative;
 }
@@ -139,13 +143,13 @@
 }
 
 .swiszta-version-badge {
-  background: rgba(201, 150, 47, 0.2);
-  color: #e0b45c;
-  border: 1px solid rgba(224, 180, 92, 0.4);
-  padding: 3px 10px;
+  background: #ffffff;
+  color: #6b1118;
+  border: 1px solid #ffffff;
+  padding: 3px 12px;
   border-radius: 20px;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -154,18 +158,21 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #374151;
-  color: #ffffff;
+  background: #ffffff;
+  color: #6b1118;
   padding: 6px 14px;
   border-radius: 6px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  transition: background 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .swiszta-version-btn:hover {
-  background: #4b5563;
+  background: #fef7e7;
+  color: #8a1620;
+  transform: translateY(-1px);
 }
 
 /* ============ Buttons ============ */
@@ -427,16 +434,31 @@
 /* ============ Hero ============ */
 .swiszta-test2 .hero {
   position: relative;
-  min-height: 640px;
+  min-height: 600px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  color: var(--white);
+  color: #ffffff;
+  background: #000000;
 }
 
 .swiszta-test2 .hero-media {
   position: absolute;
   inset: 0;
+  overflow: hidden;
+}
+
+.swiszta-test2 .hero-bg-video-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: 0;
 }
 
 .swiszta-test2 .hero-bg-img {
@@ -445,129 +467,252 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.92) contrast(1.05);
-  transform: scale(1.03);
+  object-position: center;
+  filter: brightness(0.96) contrast(1.05);
+  transform: scale(1.02);
   transition: transform 10s ease;
 }
 
 .swiszta-test2 .hero:hover .hero-bg-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
-.swiszta-test2 .hero-scene {
+.swiszta-test2 .hero-left-dark-panel {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(45, 10, 13, 0.95) 0%, rgba(45, 10, 13, 0.82) 40%, rgba(45, 10, 13, 0.15) 75%, transparent 100%);
-}
-
-.swiszta-test2 .scene-figure {
-  display: none;
-}
-
-.swiszta-test2 .scene-linens {
-  display: none;
-}
-
-.swiszta-test2 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(45, 10, 13, 0.5) 0%, transparent 35%);
-}
-
-.swiszta-test2 .hero-content {
-  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    rgba(0, 0, 0, 0.82) 0%, 
+    rgba(0, 0, 0, 0.62) 38%, 
+    rgba(0, 0, 0, 0.25) 72%, 
+    rgba(0, 0, 0, 0.08) 100%
+  );
   z-index: 2;
+}
+
+/* Center Floating Play Button */
+.swiszta-test2 .center-play-trigger {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -62%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.swiszta-test2 .center-play-trigger:hover {
+  transform: translate(-50%, -62%) scale(1.08);
+}
+
+.swiszta-test2 .play-circle-outer {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.swiszta-test2 .center-play-trigger:hover .play-circle-outer {
+  background: #c8102e;
+  border-color: #c8102e;
+  box-shadow: 0 12px 32px rgba(200, 16, 46, 0.65);
+}
+
+.swiszta-test2 .play-circle-label {
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Hero Content */
+.swiszta-test2 .hero-content-container {
+  position: relative;
+  z-index: 3;
   padding-top: 60px;
   padding-bottom: 110px;
-  max-width: 580px;
-  margin-left: 0;
+  width: 100%;
+}
+
+.swiszta-test2 .hero-text-block {
+  max-width: 520px;
   text-align: left;
 }
 
-.swiszta-test2 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.78rem;
-  color: var(--gold-400);
-  font-weight: 600;
-  margin-bottom: 18px;
-  display: inline-block;
-  background: rgba(58, 13, 16, 0.4);
-  padding: 4px 12px;
-  border-radius: 4px;
-  border: 1px solid rgba(224, 180, 92, 0.3);
-}
-
-.swiszta-test2 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
+.swiszta-test2 .hero-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
   font-weight: 800;
-  letter-spacing: 0.01em;
-  text-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0 0 22px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
 }
 
-.swiszta-test2 .hero-copy {
-  margin-top: 20px;
+.swiszta-test2 .red-accent-text {
+  color: #ff2a4b;
+  font-weight: 900;
+  text-shadow: 0 4px 20px rgba(200, 16, 46, 0.6);
+}
+
+.swiszta-test2 .hero-subtext {
+  color: #ffffff;
   font-size: 1.05rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 34px;
+  max-width: 480px;
+  font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
 }
 
-.swiszta-test2 .hero-actions {
+.swiszta-test2 .hero-button-group {
   display: flex;
   gap: 16px;
-  margin-top: 34px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.swiszta-test2 .hero-player {
+.swiszta-test2 .btn-red-action {
+  background: #c8102e;
+  color: #ffffff;
+  padding: 14px 26px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(200, 16, 46, 0.4);
+}
+
+.swiszta-test2 .btn-red-action:hover {
+  background: #e01435;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(200, 16, 46, 0.55);
+}
+
+.swiszta-test2 .btn-outline-white-action {
+  background: transparent;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.swiszta-test2 .btn-outline-white-action:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Embedded Player Bar at Bottom */
+.swiszta-test2 .hero-player-control-bar {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 3;
-  background: rgba(58, 13, 16, 0.85);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 12px 0 14px;
+  z-index: 10;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.swiszta-test2 .player-progress {
+.swiszta-test2 .bar-play-pause-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.swiszta-test2 .bar-play-pause-btn:hover {
+  color: #c8102e;
+}
+
+.swiszta-test2 .bar-timestamp {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.swiszta-test2 .bar-progress-container {
+  flex-grow: 1;
   height: 4px;
   background: rgba(255, 255, 255, 0.25);
-  margin: 0 24px 12px;
   border-radius: 2px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
 
-.swiszta-test2 .player-progress span {
-  display: block;
+.swiszta-test2 .bar-progress-line {
   height: 100%;
-  background: var(--gold-500);
+  background: #c8102e;
   border-radius: 2px;
   transition: width 0.2s linear;
 }
 
-.swiszta-test2 .player-controls {
+.swiszta-test2 .bar-action-icons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.9);
+  gap: 16px;
 }
 
-.swiszta-test2 .player-icons {
+.swiszta-test2 .bar-icon-button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
   display: flex;
-  gap: 18px;
-  font-size: 0.95rem;
   align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: all 0.2s ease;
 }
 
-.swiszta-test2 .player-icon-btn {
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 0.2s ease;
+.swiszta-test2 .bar-icon-button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
 }
 
 .swiszta-test2 .player-icon-btn:hover {
@@ -622,35 +767,37 @@
 
 /* ============ Services ============ */
 .swiszta-test2 .services {
-  padding: 90px 0 70px;
-  background: var(--cream-50);
+  padding: 110px 0 90px;
+  background: var(--cream-100);
+  border-bottom: 1px solid rgba(138, 22, 32, 0.08);
 }
 
 .swiszta-test2 .services-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 22px;
+  gap: 26px;
 }
 
 .swiszta-test2 .service-card {
-  background: var(--white);
+  background: #ffffff;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  padding-bottom: 24px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 12px 32px -12px rgba(58, 13, 16, 0.15);
+  padding-bottom: 28px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(58, 13, 16, 0.05);
+  border: 1px solid rgba(138, 22, 32, 0.1);
 }
 
 .swiszta-test2 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 26px 50px -16px rgba(58, 13, 16, 0.45);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 50px -14px rgba(138, 22, 32, 0.28);
+  border-color: #c9962f;
 }
 
 .swiszta-test2 .service-media {
-  height: 160px;
+  height: 210px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -659,41 +806,43 @@
 .swiszta-test2 .service-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, transparent 60%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, transparent 60%);
 }
 
 .swiszta-test2 .service-icon {
-  width: 52px;
-  height: 52px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: var(--maroon-700);
   color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  margin: -26px 0 16px 20px;
+  font-size: 1.4rem;
+  margin: -29px 0 18px 22px;
   border: 4px solid var(--white);
-  box-shadow: 0 4px 12px rgba(58, 13, 16, 0.25);
+  box-shadow: 0 6px 16px rgba(58, 13, 16, 0.25);
   position: relative;
   z-index: 2;
 }
 
 .swiszta-test2 .service-card h3 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
+  font-weight: 700;
   text-align: left;
-  padding: 0 20px;
-  margin-bottom: 10px;
+  padding: 0 22px;
+  margin-bottom: 12px;
   color: var(--maroon-950);
+  line-height: 1.25;
 }
 
 .swiszta-test2 .service-card p {
   text-align: left;
-  padding: 0 20px;
-  font-size: 0.85rem;
-  color: var(--ink-500);
-  line-height: 1.55;
-  margin-bottom: 16px;
+  padding: 0 22px;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  line-height: 1.6;
+  margin-bottom: 22px;
   flex-grow: 1;
 }
 
@@ -701,13 +850,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 22px;
   text-align: left;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--maroon-700);
   transition: color 0.2s ease;
@@ -719,65 +868,66 @@
 
 /* ============ About ============ */
 .swiszta-test2 .about {
-  padding: 95px 0;
-  background: var(--white);
-  border-top: 1px solid rgba(58, 13, 16, 0.05);
-  border-bottom: 1px solid rgba(58, 13, 16, 0.05);
+  padding: 115px 0;
+  background: var(--cream-50);
+  border-bottom: 1px solid rgba(138, 22, 32, 0.08);
 }
 
 .swiszta-test2 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
   align-items: center;
 }
 
 .swiszta-test2 .about-copy h2 {
-  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
-  margin: 10px 0 20px;
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+  margin: 12px 0 22px;
   color: var(--maroon-950);
 }
 
 .swiszta-test2 .about-copy p {
-  color: var(--ink-500);
-  line-height: 1.7;
-  font-size: 0.98rem;
-  margin-bottom: 26px;
+  color: var(--ink-700);
+  line-height: 1.75;
+  font-size: 1.04rem;
+  margin-bottom: 30px;
 }
 
 .swiszta-test2 .value-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px 24px;
-  margin-bottom: 32px;
+  gap: 18px 24px;
+  margin-bottom: 36px;
 }
 
 .swiszta-test2 .value {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--ink-900);
-  background: var(--cream-50);
-  padding: 10px 14px;
+  gap: 14px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--maroon-950);
+  background: #ffffff;
+  padding: 14px 20px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(58, 13, 16, 0.06);
+  border: 1px solid rgba(138, 22, 32, 0.12);
+  box-shadow: 0 4px 14px rgba(58, 13, 16, 0.06);
 }
 
 .swiszta-test2 .value span {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
 }
 
 .swiszta-test2 .about-media {
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 20px 50px -16px rgba(58, 13, 16, 0.35);
+  border: 1px solid rgba(58, 13, 16, 0.1);
 }
 
 .swiszta-test2 .about-scene {
-  height: 420px;
+  height: 480px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -791,65 +941,173 @@
 
 .swiszta-test2 .watch-btn {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 24px;
+  bottom: 24px;
   top: auto;
   transform: none;
-  background: rgba(58, 13, 16, 0.88);
+  background: rgba(58, 13, 16, 0.92);
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
   border-radius: 50px;
-  padding: 12px 22px;
+  padding: 14px 26px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
+  gap: 12px;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-weight: 600;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 
 .swiszta-test2 .watch-btn:hover {
   background: var(--maroon-700);
   border-color: var(--gold-400);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+}
+
+/* ============ Team Banner Showcase ============ */
+.swiszta-test2 .team-banner-section {
+  padding: 95px 0 105px;
+  background: linear-gradient(180deg, var(--cream-50) 0%, var(--cream-100) 100%);
+  border-bottom: 1px solid rgba(138, 22, 32, 0.08);
+}
+
+.swiszta-test2 .team-banner-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.swiszta-test2 .team-banner-header h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.0rem);
+  margin-top: 10px;
+  color: var(--maroon-950);
+}
+
+.swiszta-test2 .team-banner-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 50px -12px rgba(58, 13, 16, 0.28);
+  border: 2px solid rgba(201, 150, 47, 0.4);
+  background: var(--maroon-950);
+}
+
+.swiszta-test2 .team-banner-img {
+  width: 100%;
+  max-height: 540px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.swiszta-test2 .team-banner-frame:hover .team-banner-img {
+  transform: scale(1.02);
+}
+
+.swiszta-test2 .team-departments-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  width: calc(100% - 48px);
+  max-width: 960px;
+  z-index: 3;
+}
+
+.swiszta-test2 .dept-pill {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #3a0d10;
+  border: 1.5px solid #c9962f;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.swiszta-test2 .dept-pill:hover {
+  background: #8a1620;
+  color: #ffffff;
+  border-color: #e0b45c;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(138, 22, 32, 0.45);
+}
+
+.swiszta-test2 .dept-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8a1620;
+  box-shadow: 0 0 6px rgba(138, 22, 32, 0.6);
+}
+
+.swiszta-test2 .dept-pill:hover .dot {
+  background: #e0b45c;
+  box-shadow: 0 0 8px #e0b45c;
 }
 
 /* ============ Why choose ============ */
 .swiszta-test2 .why {
-  background: var(--cream-100);
-  padding: 85px 0;
+  background: var(--cream-200);
+  padding: 105px 0;
 }
 
 .swiszta-test2 .why-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
 .swiszta-test2 .why-item {
-  background: var(--white);
+  background: #ffffff;
   border-radius: var(--radius-md);
-  padding: 24px 20px;
+  padding: 30px 22px;
   text-align: left;
-  box-shadow: 0 10px 26px -14px rgba(58, 13, 16, 0.18);
-  border: 1px solid rgba(58, 13, 16, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 30px -14px rgba(58, 13, 16, 0.16);
+  border: 1px solid rgba(138, 22, 32, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .swiszta-test2 .why-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 36px -12px rgba(58, 13, 16, 0.3);
+  transform: translateY(-6px);
+  border-color: var(--gold-500);
+  box-shadow: 0 20px 40px -12px rgba(138, 22, 32, 0.28);
 }
 
 .swiszta-test2 .why-icon {
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   color: var(--maroon-700);
+}
+
+.swiszta-test2 .why-item strong {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--maroon-950);
+}
+
+.swiszta-test2 .why-item small {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
 }
 
 .swiszta-test2 .why-item strong {
@@ -1207,6 +1465,14 @@
 }
 
 @media (max-width: 900px) {
+  .swiszta-test2 .hero-left-dark-panel {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(2, 2, 2, 0.92) 0%, rgba(2, 2, 2, 0.85) 70%, rgba(2, 2, 2, 0.5) 100%);
+  }
+  .swiszta-test2 .center-play-trigger {
+    left: 80%;
+    top: 30%;
+  }
   .swiszta-test2 .main-nav {
     display: flex;
     flex-direction: column;
@@ -1249,6 +1515,12 @@
 }
 
 @media (max-width: 640px) {
+  .swiszta-test2 .center-play-trigger {
+    display: none;
+  }
+  .swiszta-test2 .hero-heading {
+    font-size: 2.2rem;
+  }
   .swiszta-test2 .topbar-tagline {
     display: none;
   }

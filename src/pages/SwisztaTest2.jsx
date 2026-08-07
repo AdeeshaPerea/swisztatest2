@@ -17,7 +17,7 @@ export default function SwisztaTest2({
 }) {
   const [navOpen, setNavOpen] = useState(false);
   const [backToTopVisible, setBackToTopVisible] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [videoSeconds, setVideoSeconds] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
   const [activeSection, setActiveSection] = useState('top');
@@ -249,51 +249,89 @@ export default function SwisztaTest2({
       </header>
 
       {/* Hero Section */}
-      <section className="hero" id="top">
+      <section className="hero hero-elevating-style" id="top">
         <div className="hero-media">
-          <img 
-            src="/images/concierge_hero.jpg" 
-            alt="Luxury Hospitality background" 
-            className="hero-bg-img"
-            onError={(e) => e.target.style.display = 'none'}
-          />
-          <div className="hero-scene">
-            <div className="scene-figure"></div>
-            <div className="scene-linens"></div>
-          </div>
-          <div className="hero-overlay"></div>
-        </div>
-
-        <div className="container hero-content">
-          <p className="eyebrow">Trusted Hotel Services Partner &mdash; Est. 1982</p>
-          <h1>Elevating<br />Hotel Services<br /><span className="text-accent">Every Day</span></h1>
-          <p className="hero-copy">
-            Housekeeping, guest services, food &amp; beverage and facility management &mdash; 
-            delivered by one dependable partner, so every stay feels effortless.
-          </p>
-          <div className="hero-actions">
-            <a href="#services" className="btn btn-primary">
-              Discover Our Services <span className="arrow">&rarr;</span>
-            </a>
-            <button 
-              className="btn btn-ghost" 
-              onClick={() => {
-                setIsPlaying(!isPlaying);
-                if (onOpenVideo) onOpenVideo();
+          {isPlaying ? (
+            <iframe
+              className="hero-bg-video-iframe"
+              src={`https://www.youtube-nocookie.com/embed/Am6-Kg_Fjgs?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=Am6-Kg_Fjgs&controls=0&showinfo=0&rel=0&enablejsapi=1`}
+              title="SWISZTA Hero Background Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <img 
+              src="/images/housekeeping_bedmaking.jpg" 
+              alt="Luxury Hotel Housekeeping" 
+              className="hero-bg-img"
+              onError={(e) => {
+                e.target.src = '/images/housekeeping_hero.jpg';
               }}
-            >
-              <span className="play-dot">
-                {isPlaying ? <Pause size={10} /> : <Play size={10} />}
-              </span> 
-              {isPlaying ? 'Pause Video' : 'Watch Video'}
-            </button>
+            />
+          )}
+          <div className="hero-left-dark-panel"></div>
+        </div>
+
+        {/* Center Floating "Play Full Video" Button */}
+        <div 
+          className="center-play-trigger"
+          onClick={() => {
+            setIsPlaying(!isPlaying);
+            if (onOpenVideo) onOpenVideo();
+          }}
+          title="Play Full Video"
+        >
+          <div className="play-circle-outer">
+            <div className="play-circle-inner">
+              <Play size={26} fill="#ffffff" color="#ffffff" style={{ marginLeft: '3px' }} />
+            </div>
+          </div>
+          <span className="play-circle-label">PLAY FULL VIDEO</span>
+        </div>
+
+        {/* Left Card Content */}
+        <div className="container hero-content-container">
+          <div className="hero-text-block">
+            <h1 className="hero-heading">
+              ELEVATING<br />
+              HOSPITALITY<br />
+              <span className="red-accent-text">EVERY DAY</span>
+            </h1>
+            <p className="hero-subtext">
+              Trusted partner for housekeeping, guest services, food &amp; beverage and facility management. 
+              Delivering exceptional experiences that create lasting impressions.
+            </p>
+            <div className="hero-button-group">
+              <a href="#services" className="btn btn-red-action">
+                DISCOVER OUR SERVICES <ArrowRight size={15} />
+              </a>
+              <button 
+                className="btn btn-outline-white-action" 
+                onClick={() => {
+                  setIsPlaying(!isPlaying);
+                  if (onOpenVideo) onOpenVideo();
+                }}
+              >
+                <Play size={14} fill="#ffffff" color="#ffffff" /> WATCH VIDEO
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Video Player Control Bar */}
-        <div className="hero-player">
+        {/* Video Player Control Bar at Bottom of Hero */}
+        <div className="hero-player-control-bar">
+          <button 
+            className="bar-play-pause-btn"
+            onClick={() => setIsPlaying(!isPlaying)}
+            aria-label={isPlaying ? 'Pause' : 'Play'}
+          >
+            {isPlaying ? <Pause size={14} /> : <Play size={14} fill="#ffffff" color="#ffffff" />}
+          </button>
+          <span className="bar-timestamp">
+            {formatTime(videoSeconds)} / {formatTime(totalVideoSeconds)}
+          </span>
           <div 
-            className="player-progress"
+            className="bar-progress-container"
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
               const clickX = e.clientX - rect.left;
@@ -301,31 +339,26 @@ export default function SwisztaTest2({
               setVideoSeconds(Math.floor(pct * totalVideoSeconds));
             }}
           >
-            <span style={{ width: `${(videoSeconds / totalVideoSeconds) * 100}%` }}></span>
+            <div className="bar-progress-line" style={{ width: `${(videoSeconds / totalVideoSeconds) * 100}%` }}></div>
           </div>
-          <div className="player-controls container">
-            <span className="player-time">
-              {formatTime(videoSeconds)} / {formatTime(totalVideoSeconds)}
-            </span>
-            <div className="player-icons">
-              <button 
-                className="player-icon-btn" 
-                title={isMuted ? 'Unmute' : 'Mute'}
-                onClick={() => setIsMuted(!isMuted)}
-              >
-                {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-              </button>
-              <button className="player-icon-btn" title="Settings">
-                <Settings size={16} />
-              </button>
-              <button 
-                className="player-icon-btn" 
-                title="Fullscreen Modal"
-                onClick={onOpenVideo}
-              >
-                <Maximize2 size={16} />
-              </button>
-            </div>
+          <div className="bar-action-icons">
+            <button 
+              className="bar-icon-button" 
+              title={isMuted ? 'Unmute' : 'Mute'}
+              onClick={() => setIsMuted(!isMuted)}
+            >
+              {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+            </button>
+            <button className="bar-icon-button" title="Settings">
+              <Settings size={16} />
+            </button>
+            <button 
+              className="bar-icon-button" 
+              title="Fullscreen Modal"
+              onClick={onOpenVideo}
+            >
+              <Maximize2 size={16} />
+            </button>
           </div>
         </div>
       </section>
@@ -418,12 +451,35 @@ export default function SwisztaTest2({
           <div className="about-media">
             <div 
               className="about-scene" 
-              style={{ backgroundImage: `url('/images/swiszta_team.png')` }}
+              style={{ backgroundImage: `url('/images/swiszta_team.jpg')` }}
             >
               <div className="about-scene-overlay"></div>
               <button className="watch-btn" onClick={onOpenVideo}>
                 <span className="play-dot"><Play size={10} /></span> Watch Our Corporate Video
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Banner Showcase Section */}
+      <section className="team-banner-section">
+        <div className="container">
+          <div className="team-banner-header">
+            <p className="section-eyebrow">&mdash; Our Dedicated Professionals &mdash;</p>
+            <h2>One Team. Every Department.<br /><span className="text-accent">Unmatched Hospitality Excellence</span></h2>
+          </div>
+          <div className="team-banner-frame">
+            <img 
+              src="/images/team_banner.jpg" 
+              alt="Swiszta Hotel Services Team - Housekeeping, Concierge, Front Office, Kitchen" 
+              className="team-banner-img"
+            />
+            <div className="team-departments-overlay">
+              <div className="dept-pill"><span className="dot"></span> Housekeeping</div>
+              <div className="dept-pill"><span className="dot"></span> Concierge</div>
+              <div className="dept-pill"><span className="dot"></span> Front Office</div>
+              <div className="dept-pill"><span className="dot"></span> Kitchen &amp; F&amp;B</div>
             </div>
           </div>
         </div>
