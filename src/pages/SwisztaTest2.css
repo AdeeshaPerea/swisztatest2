@@ -804,68 +804,96 @@
 
 .swiszta-test2 .service-card {
   background: #ffffff;
-  border-radius: var(--radius-md);
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 12px 32px -12px rgba(58, 13, 16, 0.15);
-  padding-bottom: 28px;
+  box-shadow: 0 10px 28px -10px rgba(58, 13, 16, 0.14);
+  padding-bottom: 26px;
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(138, 22, 32, 0.1);
+  text-align: center;
+  border: 1px solid rgba(138, 22, 32, 0.12);
 }
 
 .swiszta-test2 .service-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 24px 50px -14px rgba(138, 22, 32, 0.28);
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px -12px rgba(138, 22, 32, 0.25);
   border-color: #c9962f;
 }
 
 .swiszta-test2 .service-media {
-  height: 210px;
+  height: 220px;
   background-size: cover;
-  background-position: center;
+  background-position: center 20%;
   position: relative;
+}
+
+.swiszta-test2 .service-media-housekeeping {
+  background-position: center 15%;
+}
+
+.swiszta-test2 .service-media-concierge {
+  background-position: center 10%;
+}
+
+.swiszta-test2 .service-media-catering {
+  background-position: center 12%;
+}
+
+.swiszta-test2 .service-media-laundry {
+  background-position: center 30%;
+}
+
+.swiszta-test2 .service-media-maintenance {
+  background-position: center 12%;
 }
 
 .swiszta-test2 .service-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, transparent 60%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(58, 13, 16, 0.28) 100%);
 }
 
 .swiszta-test2 .service-icon {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: var(--maroon-700);
-  color: var(--white);
+  background: linear-gradient(135deg, #7A0C16 0%, #55070E 100%);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  margin: -29px 0 18px 22px;
-  border: 4px solid var(--white);
-  box-shadow: 0 6px 16px rgba(58, 13, 16, 0.25);
+  font-size: 1.25rem;
+  margin: -26px auto 16px auto;
+  border: 2.5px solid #D4AF37;
+  box-shadow: 0 5px 16px rgba(58, 13, 16, 0.35);
   position: relative;
   z-index: 2;
 }
 
 .swiszta-test2 .service-card h3 {
-  font-size: 1.15rem;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
   font-weight: 700;
-  text-align: left;
-  padding: 0 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0 16px;
   margin-bottom: 12px;
-  color: var(--maroon-950);
-  line-height: 1.25;
+  color: #3B0409;
+  line-height: 1.3;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .swiszta-test2 .service-card p {
-  text-align: left;
-  padding: 0 22px;
-  font-size: 0.92rem;
+  text-align: center;
+  padding: 0 18px;
+  font-size: 0.88rem;
   color: var(--ink-700);
-  line-height: 1.6;
+  line-height: 1.55;
   margin-bottom: 22px;
   flex-grow: 1;
 }
@@ -873,21 +901,21 @@
 .swiszta-test2 .link-more {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
+  justify-content: center;
+  gap: 6px;
   width: 100%;
-  padding: 0 22px;
-  text-align: left;
+  padding: 0 18px;
+  text-align: center;
   font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--maroon-700);
-  transition: color 0.2s ease;
+  color: #7A0C16;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .swiszta-test2 .link-more:hover {
-  color: var(--maroon-900);
+  color: #c9962f;
 }
 
 /* ============ About ============ */

@@ -4,7 +4,16 @@ import { X, CheckCircle2, ChevronRight } from 'lucide-react';
 export default function ServiceDetailModal({ service, onClose, onOpenQuote }) {
   if (!service) return null;
 
-  const isComponent = typeof service.icon === 'function' || (typeof service.icon === 'object' && service.icon !== null);
+  const renderIcon = () => {
+    if (React.isValidElement(service.icon)) {
+      return service.icon;
+    }
+    if (typeof service.icon === 'function') {
+      const IconComponent = service.icon;
+      return <IconComponent size={30} />;
+    }
+    return <span>{service.icon || '✨'}</span>;
+  };
 
   const detailHeading = service.detailHeading || `${service.title} Excellence & Operational Standards`;
   const details = service.details || service.description || 'Delivering premium, high-precision operational solutions tailored to luxury 4-star and 5-star hotel environments.';
@@ -26,7 +35,7 @@ export default function ServiceDetailModal({ service, onClose, onOpenQuote }) {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
           <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: 'rgba(138, 22, 32, 0.1)', color: '#8a1620', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', flexShrink: 0 }}>
-            {isComponent ? <service.icon size={30} /> : <span>{service.icon || '✨'}</span>}
+            {renderIcon()}
           </div>
           <div>
             <h3 style={{ fontSize: '1.6rem', fontWeight: 800, margin: 0, color: '#3a0d10' }}>{service.title}</h3>

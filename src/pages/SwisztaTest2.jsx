@@ -141,37 +141,37 @@ export default function SwisztaTest2({
   const servicesData = [
     {
       id: 'housekeeping',
-      title: 'Housekeeping',
+      title: 'HOUSEKEEPING',
       image: '/images/housekeeping_hero.jpg',
-      icon: '✨',
+      icon: <Home size={22} color="#FFFFFF" />,
       description: 'Impeccable cleanliness and hygiene with exceptional attention to detail.'
     },
     {
       id: 'concierge',
-      title: 'Concierge & Guest Services',
+      title: 'CONCIERGE & GUEST SERVICES',
       image: '/images/concierge_hero.jpg',
-      icon: '🛎️',
+      icon: <Bell size={22} color="#FFFFFF" />,
       description: 'Creating memorable experiences with warmth, care and professionalism.'
     },
     {
       id: 'catering',
-      title: 'Food & Beverage',
+      title: 'FOOD & BEVERAGE',
       image: '/images/catering_hero.jpg',
-      icon: '🍳',
+      icon: <Utensils size={22} color="#FFFFFF" />,
       description: 'Culinary excellence and innovative dining experiences.'
     },
     {
       id: 'laundry',
-      title: 'Laundry & Linen',
+      title: 'LAUNDRY & LINEN',
       image: '/images/laundry_hero.jpg',
-      icon: '🧺',
+      icon: <Shirt size={22} color="#FFFFFF" />,
       description: 'Hygienic, fresh and perfect linen care, every single time.'
     },
     {
       id: 'maintenance',
-      title: 'Facility Management & Maintenance',
+      title: 'ENGINEERING & FACILITY MANAGEMENT',
       image: '/images/maintenance_hero.jpg',
-      icon: '🔧',
+      icon: <Wrench size={22} color="#FFFFFF" />,
       description: 'Reliable, efficient and sustainable facilities management solutions.'
     }
   ];
@@ -369,9 +369,15 @@ export default function SwisztaTest2({
           <p className="section-eyebrow">&mdash; Our Core Services &mdash;</p>
           <div className="services-grid">
             {servicesData.map((svc) => (
-              <article className="service-card" key={svc.id}>
+              <article 
+                className="service-card" 
+                data-service={svc.id} 
+                key={svc.id}
+                onClick={() => onSelectService ? onSelectService(svc) : onOpenQuote()}
+                style={{ cursor: 'pointer' }}
+              >
                 <div 
-                  className="service-media" 
+                  className={`service-media service-media-${svc.id}`} 
                   style={{ backgroundImage: `url(${svc.image})` }}
                 >
                   <div className="service-media-overlay"></div>
@@ -381,7 +387,14 @@ export default function SwisztaTest2({
                 <p>{svc.description}</p>
                 <button 
                   className="link-more"
-                  onClick={() => onSelectService ? onSelectService(svc) : onOpenQuote()}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (onSelectService) {
+                      onSelectService(svc);
+                    } else {
+                      onOpenQuote();
+                    }
+                  }}
                 >
                   Learn more <span className="arrow">&rarr;</span>
                 </button>
