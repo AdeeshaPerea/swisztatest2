@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './SwisztaTest2.css';
 import Logo from '../components/Logo';
+import SwisztaBrandCard from '../components/SwisztaBrandCard';
+import ExcellenceBanner from '../components/ExcellenceBanner';
+import LuxuryCareersShowcase from '../components/LuxuryCareersShowcase';
 import { 
   Play, Pause, ArrowRight, Phone, Mail, Volume2, VolumeX, Settings, Maximize2, 
   ChevronUp, CheckCircle, Award, Globe, Building, Users, Clock, 
-  Sparkles, ShieldCheck, Shirt, Utensils, Wrench, Menu, X, ArrowUpRight
+  Sparkles, ShieldCheck, Shirt, Utensils, Wrench, Menu, X, ArrowUpRight,
+  ChevronRight, MapPin, Printer, Leaf, HardHat, Bell, Home
 } from 'lucide-react';
 
 export default function SwisztaTest2({ 
@@ -248,153 +252,113 @@ export default function SwisztaTest2({
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="hero hero-elevating-style" id="top">
-        <div className="hero-media">
-          {isPlaying ? (
-            <iframe
-              className="hero-bg-video-iframe"
-              src={`https://www.youtube-nocookie.com/embed/Am6-Kg_Fjgs?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=Am6-Kg_Fjgs&controls=0&showinfo=0&rel=0&enablejsapi=1`}
-              title="SWISZTA Hero Background Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          ) : (
-            <img 
-              src="/images/housekeeping_bedmaking.jpg" 
-              alt="Luxury Hotel Housekeeping" 
-              className="hero-bg-img"
-              onError={(e) => {
-                e.target.src = '/images/housekeeping_hero.jpg';
-              }}
-            />
-          )}
-          <div className="hero-left-dark-panel"></div>
-        </div>
-
-        {/* Center Floating "Play Full Video" Button */}
-        <div 
-          className="center-play-trigger"
-          onClick={() => {
-            setIsPlaying(!isPlaying);
-            if (onOpenVideo) onOpenVideo();
+      {/* Hero Section - Excellence In Every Detail Mockup Design */}
+      <div id="top">
+        <ExcellenceBanner 
+          onOpenQuote={onOpenQuote}
+          onOpenVideo={onOpenVideo}
+          onDiscoverServices={() => {
+            const targetEl = document.getElementById('services');
+            if (targetEl) {
+              const headerOffset = 80;
+              const elementPosition = targetEl.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
           }}
-          title="Play Full Video"
-        >
-          <div className="play-circle-outer">
-            <div className="play-circle-inner">
-              <Play size={26} fill="#ffffff" color="#ffffff" style={{ marginLeft: '3px' }} />
-            </div>
-          </div>
-          <span className="play-circle-label">PLAY FULL VIDEO</span>
-        </div>
-
-        {/* Left Card Content */}
-        <div className="container hero-content-container">
-          <div className="hero-text-block">
-            <h1 className="hero-heading">
-              ELEVATING<br />
-              HOSPITALITY<br />
-              <span className="red-accent-text">EVERY DAY</span>
-            </h1>
-            <p className="hero-subtext">
-              Trusted partner for housekeeping, guest services, food &amp; beverage and facility management. 
-              Delivering exceptional experiences that create lasting impressions.
-            </p>
-            <div className="hero-button-group">
-              <a href="#services" className="btn btn-red-action">
-                DISCOVER OUR SERVICES <ArrowRight size={15} />
-              </a>
-              <button 
-                className="btn btn-outline-white-action" 
-                onClick={() => {
-                  setIsPlaying(!isPlaying);
-                  if (onOpenVideo) onOpenVideo();
-                }}
-              >
-                <Play size={14} fill="#ffffff" color="#ffffff" /> WATCH VIDEO
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Video Player Control Bar at Bottom of Hero */}
-        <div className="hero-player-control-bar">
-          <button 
-            className="bar-play-pause-btn"
-            onClick={() => setIsPlaying(!isPlaying)}
-            aria-label={isPlaying ? 'Pause' : 'Play'}
-          >
-            {isPlaying ? <Pause size={14} /> : <Play size={14} fill="#ffffff" color="#ffffff" />}
-          </button>
-          <span className="bar-timestamp">
-            {formatTime(videoSeconds)} / {formatTime(totalVideoSeconds)}
-          </span>
-          <div 
-            className="bar-progress-container"
-            onClick={(e) => {
-              const rect = e.currentTarget.getBoundingClientRect();
-              const clickX = e.clientX - rect.left;
-              const pct = clickX / rect.width;
-              setVideoSeconds(Math.floor(pct * totalVideoSeconds));
-            }}
-          >
-            <div className="bar-progress-line" style={{ width: `${(videoSeconds / totalVideoSeconds) * 100}%` }}></div>
-          </div>
-          <div className="bar-action-icons">
-            <button 
-              className="bar-icon-button" 
-              title={isMuted ? 'Unmute' : 'Mute'}
-              onClick={() => setIsMuted(!isMuted)}
-            >
-              {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-            </button>
-            <button className="bar-icon-button" title="Settings">
-              <Settings size={16} />
-            </button>
-            <button 
-              className="bar-icon-button" 
-              title="Fullscreen Modal"
-              onClick={onOpenVideo}
-            >
-              <Maximize2 size={16} />
-            </button>
-          </div>
-        </div>
-      </section>
+        />
+      </div>
 
       {/* Stat Strip */}
       <section className="stat-strip">
         <div className="container stat-grid">
           <div className="stat">
-            <span className="stat-icon">🏛️</span>
-            <strong>1982</strong>
-            <small>Established</small>
+            <div className="stat-icon-wrapper">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffcf40" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 21h18" />
+                <path d="M5 21V7l7-4 7 4v14" />
+                <path d="M9 21v-4a3 3 0 0 1 6 0v4" />
+                <path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01" />
+              </svg>
+            </div>
+            <div className="stat-info">
+              <strong>1982</strong>
+              <small>ESTABLISHED</small>
+            </div>
           </div>
+
           <div className="stat">
-            <span className="stat-icon">🌐</span>
-            <strong>12+</strong>
-            <small>Countries</small>
+            <div className="stat-icon-wrapper">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffcf40" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <div className="stat-info">
+              <strong>12+</strong>
+              <small>COUNTRIES</small>
+            </div>
           </div>
+
           <div className="stat">
-            <span className="stat-icon">🏨</span>
-            <strong>150+</strong>
-            <small>Hotel Sites</small>
+            <div className="stat-icon-wrapper">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffcf40" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18" />
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+                <path d="M10 6h4M10 10h4M10 14h4M10 18h4" />
+              </svg>
+            </div>
+            <div className="stat-info">
+              <strong>150+</strong>
+              <small>HOTEL SITES</small>
+            </div>
           </div>
+
           <div className="stat">
-            <span className="stat-icon">👥</span>
-            <strong>10,000+</strong>
-            <small>Trained Professionals</small>
+            <div className="stat-icon-wrapper">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffcf40" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div className="stat-info">
+              <strong>10,000+</strong>
+              <small>TRAINED PROFESSIONALS</small>
+            </div>
           </div>
+
           <div className="stat">
-            <span className="stat-icon">🏆</span>
-            <strong>50+</strong>
-            <small>Years of Excellence</small>
+            <div className="stat-icon-wrapper">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffcf40" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+              </svg>
+            </div>
+            <div className="stat-info">
+              <strong>50+</strong>
+              <small>YEARS OF EXCELLENCE</small>
+            </div>
           </div>
+
           <div className="stat">
-            <span className="stat-icon">⏰</span>
-            <strong>24/7</strong>
-            <small>Operational Support</small>
+            <div className="stat-icon-wrapper">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#ffcf40" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div className="stat-info">
+              <strong>24/7</strong>
+              <small>OPERATIONAL SUPPORT</small>
+            </div>
           </div>
         </div>
       </section>
@@ -427,100 +391,196 @@ export default function SwisztaTest2({
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="about" id="about">
-        <div className="container about-grid">
-          <div className="about-copy">
-            <p className="section-eyebrow">About Swiszta</p>
-            <h2>50+ Years of<br /><span className="text-accent">Trust &amp; Excellence</span></h2>
-            <p>
-              Since 1982, Swiszta has been at the forefront of hotel services, partnering with the 
-              world's leading hotels to deliver integrated solutions that create exceptional experiences, 
-              build trust and make a positive impact.
-            </p>
-            <div className="value-grid">
-              <div className="value"><span>🤝</span> People First</div>
-              <div className="value"><span>🏆</span> Quality Driven</div>
-              <div className="value"><span>🌱</span> Sustainable Future</div>
-              <div className="value"><span>🛡️</span> Integrity &amp; Trust</div>
-            </div>
-            <button className="btn btn-primary" onClick={onOpenQuote}>
-              More About Swiszta <span className="arrow">&rarr;</span>
-            </button>
-          </div>
-          <div className="about-media">
-            <div 
-              className="about-scene" 
-              style={{ backgroundImage: `url('/images/swiszta_team.jpg')` }}
-            >
-              <div className="about-scene-overlay"></div>
-              <button className="watch-btn" onClick={onOpenVideo}>
-                <span className="play-dot"><Play size={10} /></span> Watch Our Corporate Video
+      {/* About & Why Choose Showcase Section (Matching User Mockup) */}
+      <section className="about-showcase-section" id="about">
+        <div className="container">
+          <div className="about-showcase-grid">
+            
+            {/* Left Copy Block */}
+            <div className="about-showcase-copy">
+              <div className="about-eyebrow-line">
+                <span className="eyebrow-text">ABOUT SWISZTA</span>
+                <span className="eyebrow-divider"></span>
+                <span className="eyebrow-diamond">◆</span>
+              </div>
+
+              <h2 className="about-showcase-heading">
+                50+ Years of<br />
+                <span className="red-heading-accent">Trust &amp; Excellence</span>
+              </h2>
+
+              <p className="about-showcase-desc">
+                Since 1982, Swiszta has been at the forefront of hospitality services, partnering with the 
+                world's leading hotels to deliver integrated solutions that create exceptional experiences, 
+                build trust and make a positive impact.
+              </p>
+
+              {/* 4 Value Pillars Row */}
+              <div className="about-pillars-row">
+                <div className="pillar-item">
+                  <div className="pillar-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  </div>
+                  <div className="pillar-label">
+                    <span className="black-txt">People</span>
+                    <span className="red-txt">First</span>
+                  </div>
+                </div>
+
+                <div className="pillar-item">
+                  <div className="pillar-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <polygon points="12 8 13.09 10.26 15.5 10.61 13.75 12.31 14.16 14.74 12 13.6 9.84 14.74 10.25 12.31 8.5 10.61 10.91 10.26 12 8" />
+                    </svg>
+                  </div>
+                  <div className="pillar-label">
+                    <span className="black-txt">Quality</span>
+                    <span className="red-txt">Driven</span>
+                  </div>
+                </div>
+
+                <div className="pillar-item">
+                  <div className="pillar-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <path d="M12 8v8M8 12h8" />
+                    </svg>
+                  </div>
+                  <div className="pillar-label">
+                    <span className="black-txt">Sustainable</span>
+                    <span className="red-txt">Future</span>
+                  </div>
+                </div>
+
+                <div className="pillar-item">
+                  <div className="pillar-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                  </div>
+                  <div className="pillar-label">
+                    <span className="black-txt">Integrity &amp;</span>
+                    <span className="red-txt">Trust</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <button className="about-showcase-btn" onClick={onOpenQuote}>
+                MORE ABOUT SWISZTA <span className="arrow">&rarr;</span>
               </button>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Team Banner Showcase Section */}
-      <section className="team-banner-section">
-        <div className="container">
-          <div className="team-banner-header">
-            <p className="section-eyebrow">&mdash; Our Dedicated Professionals &mdash;</p>
-            <h2>One Team. Every Department.<br /><span className="text-accent">Unmatched Hospitality Excellence</span></h2>
-          </div>
-          <div className="team-banner-frame">
-            <img 
-              src="/images/team_banner.jpg" 
-              alt="Swiszta Hotel Services Team - Housekeeping, Concierge, Front Office, Kitchen" 
-              className="team-banner-img"
-            />
-            <div className="team-departments-overlay">
-              <div className="dept-pill"><span className="dot"></span> Housekeeping</div>
-              <div className="dept-pill"><span className="dot"></span> Concierge</div>
-              <div className="dept-pill"><span className="dot"></span> Front Office</div>
-              <div className="dept-pill"><span className="dot"></span> Kitchen &amp; F&amp;B</div>
+            {/* Right Media Frame - Grand Hotel Lounge Image */}
+            <div className="about-showcase-media">
+              <img 
+                src="/images/footer_lounge_bg.png" 
+                alt="SWISZTA Grand Hotel Lounge &amp; Dining Hall" 
+                className="about-lounge-img"
+              />
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Why Choose Section */}
-      <section className="why" id="standard">
-        <div className="container">
-          <p className="section-eyebrow">&mdash; Why Choose Swiszta &mdash;</p>
-          <div className="why-grid">
-            <div className="why-item">
-              <span className="why-icon">🛡️</span>
-              <strong>Quality Driven</strong>
-              <small>We never compromise</small>
+          </div>
+
+          {/* Section Divider: WHY CHOOSE SWISZTA */}
+          <div className="why-choose-divider-row">
+            <span className="divider-line"></span>
+            <div className="divider-content">
+              <span className="diamond">◆</span>
+              <span className="divider-title">WHY CHOOSE SWISZTA</span>
+              <span className="diamond">◆</span>
             </div>
-            <div className="why-item">
-              <span className="why-icon">👥</span>
-              <strong>Trained Professionals</strong>
-              <small>Expertise you can rely on</small>
+            <span className="divider-line"></span>
+          </div>
+
+          {/* 6 Feature Columns Grid */}
+          <div className="why-choose-features-grid" id="standard">
+            <div className="why-feature-card">
+              <div className="why-feature-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polygon points="12 8 13.09 10.26 15.5 10.61 13.75 12.31 14.16 14.74 12 13.6 9.84 14.74 10.25 12.31 8.5 10.61 10.91 10.26 12 8" />
+                </svg>
+              </div>
+              <div className="why-feature-text">
+                <strong className="title">Quality Driven</strong>
+                <span className="subtext">We never compromise</span>
+              </div>
             </div>
-            <div className="why-item">
-              <span className="why-icon">💡</span>
-              <strong>Innovative Solutions</strong>
-              <small>Technology and process</small>
+
+            <div className="why-feature-card">
+              <div className="why-feature-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </div>
+              <div className="why-feature-text">
+                <strong className="title">Trained Professionals</strong>
+                <span className="subtext">Expertise you can rely on</span>
+              </div>
             </div>
-            <div className="why-item">
-              <span className="why-icon">🌱</span>
-              <strong>Sustainable Operations</strong>
-              <small>For a better tomorrow</small>
+
+            <div className="why-feature-card">
+              <div className="why-feature-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </div>
+              <div className="why-feature-text">
+                <strong className="title">Innovative Solutions</strong>
+                <span className="subtext">Technology &amp; processes</span>
+              </div>
             </div>
-            <div className="why-item">
-              <span className="why-icon">⏰</span>
-              <strong>24/7 Support</strong>
-              <small>Always here for you</small>
+
+            <div className="why-feature-card">
+              <div className="why-feature-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polygon points="12 8 13.09 10.26 15.5 10.61 13.75 12.31 14.16 14.74 12 13.6 9.84 14.74 10.25 12.31 8.5 10.61 10.91 10.26 12 8" />
+                </svg>
+              </div>
+              <div className="why-feature-text">
+                <strong className="title">Sustainable Operations</strong>
+                <span className="subtext">For a better tomorrow</span>
+              </div>
             </div>
-            <div className="why-item">
-              <span className="why-icon">🌐</span>
-              <strong>Global Presence</strong>
-              <small>Local understanding</small>
+
+            <div className="why-feature-card">
+              <div className="why-feature-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div className="why-feature-text">
+                <strong className="title">24/7 Support</strong>
+                <span className="subtext">Always here for you</span>
+              </div>
+            </div>
+
+            <div className="why-feature-card">
+              <div className="why-feature-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#9a111a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </div>
+              <div className="why-feature-text">
+                <strong className="title">Global Presence</strong>
+                <span className="subtext">Local understanding</span>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -552,46 +612,9 @@ export default function SwisztaTest2({
         </div>
       </section>
 
-      {/* Numbers Band */}
-      <section className="numbers-band">
-        <div className="container numbers-grid">
-          <div className="number">
-            <strong>1M+</strong>
-            <small>Guests Served Annually</small>
-          </div>
-          <div className="number">
-            <strong>98%</strong>
-            <small>Client Satisfaction</small>
-          </div>
-          <div className="number">
-            <strong>99.8%</strong>
-            <small>Service Compliance</small>
-          </div>
-          <div className="number">
-            <strong>GREEN</strong>
-            <small>Sustainable Operations</small>
-          </div>
-        </div>
-      </section>
-
-      {/* Careers Section */}
-      <section className="careers" id="careers">
-        <div className="container careers-inner">
-          <div className="careers-copy">
-            <p className="section-eyebrow eyebrow-light">Join Our Team</p>
-            <h2>Build a Career in<br /><span className="text-accent">Hotel Services Excellence</span></h2>
-            <p>Be part of a passionate team that takes pride in delivering extraordinary experiences every day.</p>
-            <button className="btn btn-light" onClick={onOpenQuote}>
-              Explore Careers <span className="arrow">&rarr;</span>
-            </button>
-          </div>
-          <div 
-            className="careers-media"
-            style={{ backgroundImage: `url('/images/contact_hero.png')` }}
-          >
-            <div className="careers-media-overlay"></div>
-          </div>
-        </div>
+      {/* Luxury Careers & Stat Bar Showcase (Matching Mockup Image 2) */}
+      <section id="careers">
+        <LuxuryCareersShowcase onExploreCareers={onOpenQuote} />
       </section>
 
       {/* News Section */}
@@ -654,58 +677,204 @@ export default function SwisztaTest2({
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Luxury Red & Gold Footer */}
       <footer className="site-footer" id="contact">
-        <div className="container footer-grid">
-          <div className="footer-brand">
-            <a href="#top" className="logo" onClick={(e) => { e.preventDefault(); scrollToTop(); }}>
-              <Logo variant="dark" size="md" />
-            </a>
-            <p>Care. Comfort. Excellence.</p>
-            <div className="footer-social">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="LinkedIn">in</a>
-              <a href="#" aria-label="Instagram">ig</a>
-              <a href="#" aria-label="YouTube">yt</a>
+        <div className="container footer-grid-container">
+          <div className="footer-grid">
+            
+            {/* Column 1: Brand with Luxury Hotel Lounge Background */}
+            <SwisztaBrandCard />
+
+            {/* Column 2: Quick Links */}
+            <div className="footer-col-nav">
+              <h5 className="footer-col-title">QUICK LINKS</h5>
+              <div className="gold-title-underline"></div>
+              <ul className="footer-links-list">
+                <li><a href="#top" onClick={scrollToTop}><span>Home</span> <ChevronRight size={14} className="link-chevron" /></a></li>
+                <li><a href="#about"><span>About Swiszta</span> <ChevronRight size={14} className="link-chevron" /></a></li>
+                <li><a href="#services"><span>Services</span> <ChevronRight size={14} className="link-chevron" /></a></li>
+                <li><a href="#standard"><span>Our Standard</span> <ChevronRight size={14} className="link-chevron" /></a></li>
+                <li><a href="#careers"><span>Careers</span> <ChevronRight size={14} className="link-chevron" /></a></li>
+                <li><a href="#news"><span>What's New</span> <ChevronRight size={14} className="link-chevron" /></a></li>
+                <li><a href="#contact"><span>Contact</span> <ChevronRight size={14} className="link-chevron" /></a></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Our Services */}
+            <div className="footer-col-services">
+              <h5 className="footer-col-title">OUR SERVICES</h5>
+              <div className="gold-title-underline"></div>
+              <ul className="footer-service-rows">
+                <li>
+                  <Home size={22} className="svc-gold-icon" />
+                  <a href="#services">Housekeeping</a>
+                </li>
+                <li>
+                  <Bell size={22} className="svc-gold-icon" />
+                  <a href="#services">Concierge &amp; Guest Services</a>
+                </li>
+                <li>
+                  <Utensils size={22} className="svc-gold-icon" />
+                  <a href="#services">Food &amp; Beverage</a>
+                </li>
+                <li>
+                  <Shirt size={22} className="svc-gold-icon" />
+                  <a href="#services">Laundry &amp; Linen</a>
+                </li>
+                <li>
+                  <Wrench size={22} className="svc-gold-icon" />
+                  <a href="#services">Facility Management &amp; Maintenance</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Contact Us */}
+            <div className="footer-col-contact">
+              <h5 className="footer-col-title">CONTACT US</h5>
+              <div className="gold-title-underline"></div>
+              <ul className="footer-contact-list">
+                <li>
+                  <div className="red-icon-ring"><MapPin size={15} /></div>
+                  <div className="contact-text">
+                    1/42 Global Drive<br />
+                    Tullamarine VIC 3049<br />
+                    Australia
+                  </div>
+                </li>
+                <li>
+                  <div className="red-icon-ring"><Phone size={15} /></div>
+                  <div className="contact-text">
+                    <a href="tel:1300286579">1300 286 579</a>
+                  </div>
+                </li>
+                <li>
+                  <div className="red-icon-ring"><Printer size={15} /></div>
+                  <div className="contact-text">
+                    Fax: 03 9335 6677
+                  </div>
+                </li>
+                <li>
+                  <div className="red-icon-ring"><Mail size={15} /></div>
+                  <div className="contact-text">
+                    <a href="mailto:hello@swiszta.com">hello@swiszta.com</a>
+                  </div>
+                </li>
+                <li>
+                  <div className="red-icon-ring"><Globe size={15} /></div>
+                  <div className="contact-text">
+                    <a href="https://www.swiszta.com" target="_blank" rel="noopener noreferrer">www.swiszta.com</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Certifications Bar */}
+        <div className="footer-certifications-section">
+          <div className="cert-header-title">
+            <span className="gold-rule"></span>
+            <span className="cert-title-txt">◆ OUR CERTIFICATIONS ◆</span>
+            <span className="gold-rule"></span>
+          </div>
+          <div className="container">
+            <div className="certifications-grid">
+              
+              {/* Cert 1 */}
+              <div className="cert-card">
+                <div className="cert-badge-ring green-badge">
+                  <Leaf size={22} className="cert-icon" />
+                </div>
+                <div className="cert-info">
+                  <div className="cert-code">ISO 14001:2015</div>
+                  <div className="cert-desc">Environmental<br />Management System</div>
+                </div>
+              </div>
+
+              {/* Cert 2 */}
+              <div className="cert-card">
+                <div className="cert-badge-ring orange-badge">
+                  <HardHat size={22} className="cert-icon" />
+                </div>
+                <div className="cert-info">
+                  <div className="cert-code">ISO 45001:2018</div>
+                  <div className="cert-desc">Occupational Health &amp; Safety<br />Management System</div>
+                </div>
+              </div>
+
+              {/* Cert 3 */}
+              <div className="cert-card">
+                <div className="cert-badge-ring red-badge">
+                  <Award size={22} className="cert-icon" />
+                </div>
+                <div className="cert-info">
+                  <div className="cert-code">ISO 9001:2015</div>
+                  <div className="cert-desc">Quality Management<br />System</div>
+                </div>
+              </div>
+
+              {/* Cert 4 */}
+              <div className="cert-card">
+                <div className="cert-badge-ring blue-badge">
+                  <span className="cm3-txt">cm³</span>
+                </div>
+                <div className="cert-info">
+                  <div className="cert-code">CM3 ACCREDITED</div>
+                  <div className="cert-desc">Integrated Facilities<br />Management</div>
+                </div>
+              </div>
+
             </div>
           </div>
+        </div>
 
-          <div className="footer-col">
-            <h5>Quick Links</h5>
-            <a href="#top" onClick={scrollToTop}>Home</a>
-            <a href="#about">About Swiszta</a>
-            <a href="#services">Services</a>
-            <a href="#standard">Our Standard</a>
-            <a href="#careers">Careers</a>
-            <a href="#news">What's New</a>
-            <a href="#contact">Contact</a>
-          </div>
+        {/* Bottom Bar */}
+        <div className="footer-bottom-bar">
+          <div className="container bottom-bar-inner">
+            <div className="copyright-txt">
+              &copy; 2026 Swiszta. All Rights Reserved.
+            </div>
 
-          <div className="footer-col">
-            <h5>Our Services</h5>
-            <a href="#services">Housekeeping</a>
-            <a href="#services">Concierge &amp; Guest Services</a>
-            <a href="#services">Food &amp; Beverage</a>
-            <a href="#services">Laundry &amp; Linen</a>
-            <a href="#services">Facility Management &amp; Maintenance</a>
-          </div>
+            <div className="v-sep">|</div>
 
-          <div className="footer-col">
-            <h5>Contact Us</h5>
-            <p>Swiszta House, 7, Sir P.M. Road,<br />Fort, Mumbai &ndash; 400 001, India</p>
-            <p><a href="tel:+912269141200">+91 22 6914 1200</a></p>
-            <p><a href="mailto:enquiry@swiszta.com">enquiry@swiszta.com</a></p>
-            <p><a href="https://www.swiszta.com" target="_blank" rel="noopener noreferrer">www.swiszta.com</a></p>
+            <div className="bottom-meta-item">
+              <MapPin size={14} className="meta-icon" />
+              <span>1/42 Global Drive, Tullamarine VIC 3049, Australia</span>
+            </div>
+
+            <div className="v-sep">|</div>
+
+            <div className="bottom-meta-item">
+              <Mail size={14} className="meta-icon" />
+              <a href="mailto:hello@swiszta.com">hello@swiszta.com</a>
+            </div>
+
+            <div className="v-sep">|</div>
+
+            <div className="bottom-meta-item">
+              <Phone size={14} className="meta-icon" />
+              <a href="tel:1300286579">1300 286 579</a>
+            </div>
+
+            <div className="v-sep">|</div>
+
+            <div className="bottom-meta-item">
+              <Printer size={14} className="meta-icon" />
+              <span>Fax: 03 9335 6677</span>
+            </div>
+
+            <div className="bottom-end-mark">
+              <div className="mini-tiles">
+                <div className="tile"></div>
+                <div className="tile"></div>
+                <div className="tile"></div>
+                <div className="tile"></div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="container footer-bottom">
-          <span>&copy; 2026 Swiszta. All Rights Reserved.</span>
-          <span className="footer-links">
-            <a href="#" onClick={(e) => e.preventDefault()}>Privacy Policy</a> &nbsp;|&nbsp; 
-            <a href="#" onClick={(e) => e.preventDefault()}>Terms &amp; Conditions</a>
-          </span>
-        </div>
       </footer>
 
       {/* Floating Back to Top Button */}

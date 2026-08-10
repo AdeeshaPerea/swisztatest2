@@ -721,48 +721,72 @@
 
 /* ============ Stat strip ============ */
 .swiszta-test2 .stat-strip {
-  background: var(--maroon-800);
-  color: var(--cream-100);
-  box-shadow: inset 0 2px 10px rgba(0,0,0,0.2);
+  background: linear-gradient(90deg, #320005 0%, #52000a 25%, #63000d 50%, #52000a 75%, #320005 100%);
+  border-top: 1px solid rgba(229, 193, 88, 0.35);
+  border-bottom: 1px solid rgba(229, 193, 88, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  padding: 16px 0;
+  width: 100%;
 }
 
 .swiszta-test2 .stat-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  padding: 28px 24px;
+  padding: 0 12px;
+  max-width: 1360px;
+  margin: 0 auto;
 }
 
 .swiszta-test2 .stat {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 4px;
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0 10px;
-}
-
-.swiszta-test2 .stat:first-child {
+  justify-content: center;
+  gap: 14px;
+  padding: 8px 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
   border-left: none;
+  text-align: left;
 }
 
-.swiszta-test2 .stat-icon {
-  font-size: 1.4rem;
-  margin-bottom: 2px;
-  color: var(--gold-400);
+.swiszta-test2 .stat:last-child {
+  border-right: none;
 }
 
-.swiszta-test2 .stat strong {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  color: var(--white);
+.swiszta-test2 .stat-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 207, 64, 0.45));
 }
 
-.swiszta-test2 .stat small {
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
+.swiszta-test2 .stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiszta-test2 .stat-info strong {
+  font-family: var(--font-heading), 'Playfair Display', 'Cinzel', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+.swiszta-test2 .stat-info small {
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  opacity: 0.85;
+  color: #ffcf40;
+  margin-top: 3px;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  white-space: nowrap;
+  opacity: 1;
 }
 
 /* ============ Services ============ */
@@ -1184,48 +1208,94 @@
 
 /* ============ Careers ============ */
 .swiszta-test2 .careers {
-  background: var(--maroon-950);
-  color: var(--white);
+  background: #250407;
+  color: #ffffff;
+  padding: 0;
   overflow: hidden;
 }
 
 .swiszta-test2 .careers-inner {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 40px;
+  gap: 0;
 }
 
 .swiszta-test2 .careers-copy {
-  padding: 85px 0;
+  padding: 70px 48px 70px 0;
 }
 
-.swiszta-test2 .careers-copy h2 {
-  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-  margin: 10px 0 18px;
-  color: var(--white);
+.swiszta-test2 .careers-eyebrow-gold {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #d4af37;
+  text-transform: uppercase;
+  margin-bottom: 14px;
 }
 
-.swiszta-test2 .careers-copy p {
-  color: rgba(255, 255, 255, 0.82);
-  margin-bottom: 30px;
-  max-width: 440px;
-  line-height: 1.65;
+.swiszta-test2 .careers-title {
+  font-family: var(--font-heading), 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.1rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.swiszta-test2 .careers-title-gold {
+  color: #d4af37;
+  font-weight: 800;
+}
+
+.swiszta-test2 .careers-desc {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 28px;
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+.swiszta-test2 .btn-gold-action {
+  background: #d4af37;
+  color: #1a0204;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+  transition: all 0.25s ease;
+}
+
+.swiszta-test2 .btn-gold-action:hover {
+  background: #e5c158;
+  color: #0b0204;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(212, 175, 55, 0.5);
 }
 
 .swiszta-test2 .careers-media {
-  height: 350px;
+  height: 420px;
   background-size: cover;
-  background-position: center;
-  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  background-position: center right;
   position: relative;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+  box-shadow: -12px 0 32px rgba(0, 0, 0, 0.5);
 }
 
 .swiszta-test2 .careers-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, var(--maroon-950) 0%, transparent 60%);
+  background: linear-gradient(90deg, #250407 0%, rgba(37, 4, 7, 0.7) 25%, transparent 60%);
 }
 
 /* ============ News ============ */
@@ -1303,98 +1373,551 @@
   justify-content: flex-start;
 }
 
-/* ============ Footer ============ */
+/* ============ Luxury Red & Gold Footer ============ */
 .swiszta-test2 .site-footer {
-  background: var(--maroon-950);
-  color: rgba(255, 255, 255, 0.78);
-  padding-top: 75px;
-  border-top: 2px solid var(--gold-500);
+  background: radial-gradient(ellipse at top center, #300508 0%, #1a0204 55%, #0b0102 100%);
+  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  border-top: 2px solid #d4af37;
+  box-shadow: inset 0 8px 30px rgba(0, 0, 0, 0.7);
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+/* Ambient glow on top */
+.swiszta-test2 .site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #f3a638 50%, transparent 100%);
+  filter: blur(1px);
+}
+
+.swiszta-test2 .footer-grid-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .swiszta-test2 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
-  gap: 40px;
-  padding-bottom: 55px;
+  grid-template-columns: 1.35fr 1fr 1.3fr 1.3fr;
+  gap: 0;
+  align-items: stretch;
 }
 
-.swiszta-test2 .footer-brand .logo-text {
-  color: var(--white);
+.swiszta-test2 .footer-brand-col,
+.swiszta-test2 .footer-col-nav,
+.swiszta-test2 .footer-col-services,
+.swiszta-test2 .footer-col-contact {
+  padding: 24px 28px;
+  border-right: 1px solid rgba(212, 175, 55, 0.35);
 }
 
-.swiszta-test2 .footer-brand .logo-text small {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.swiszta-test2 .footer-brand p {
-  margin: 16px 0 20px;
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.swiszta-test2 .footer-social {
+.swiszta-test2 .footer-brand-col {
+  padding: 36px 28px;
+  position: relative;
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 0;
+  min-height: 340px;
+  justify-content: center;
 }
 
-.swiszta-test2 .footer-social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+/* Background image of luxury hotel lounge - vivid & clearly visible! */
+.swiszta-test2 .footer-brand-col::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/footer_lounge_bg.png');
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.85;
+  z-index: -2;
+  filter: brightness(0.85) contrast(1.2) saturate(1.1);
+}
+
+/* Deep warm dark burgundy contrast overlay for high readability */
+.swiszta-test2 .footer-brand-col::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(32, 4, 8, 0.45) 0%, rgba(12, 1, 3, 0.85) 100%),
+              linear-gradient(180deg, rgba(20, 2, 4, 0.5) 0%, rgba(8, 1, 2, 0.9) 100%);
+  z-index: -1;
+}
+
+.swiszta-test2 .footer-brand-col > * {
+  position: relative;
+  z-index: 2;
+}
+
+.swiszta-test2 .footer-col-contact {
+  padding-right: 0;
+  border-right: none;
+}
+
+/* Brand Column styling */
+.swiszta-test2 .footer-logo-link {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.swiszta-test2 .custom-footer-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  transition: all 0.25s ease;
-  color: var(--white);
+  gap: 14px;
 }
 
-.swiszta-test2 .footer-social a:hover {
-  background: var(--gold-500);
-  border-color: var(--gold-500);
-  color: var(--maroon-950);
-  transform: translateY(-3px);
+.swiszta-test2 .custom-footer-logo .logo-icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  width: 38px;
+  height: 38px;
 }
 
-.swiszta-test2 .footer-col h5 {
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 0.88rem;
+.swiszta-test2 .custom-footer-logo .logo-icon-grid .tile {
+  background: #dc2626;
+  border-radius: 3px;
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.8);
+}
+
+.swiszta-test2 .custom-footer-logo .brand-name {
+  font-family: var(--font-heading), 'Inter', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.swiszta-test2 .custom-footer-logo .brand-name .white-txt {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+.swiszta-test2 .custom-footer-logo .brand-name .red-txt {
+  color: #ef4444;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+.swiszta-test2 .custom-footer-logo .sub-txt {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.36em;
+  color: #ffffff;
+  margin-top: 6px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
+}
+
+/* Gold Diamond Divider */
+.swiszta-test2 .gold-diamond-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 18px 0;
+  width: 100%;
+  max-width: 380px;
+}
+
+.swiszta-test2 .gold-diamond-divider .line {
+  flex: 1;
+  height: 2px;
+  background: #e5c158;
+  box-shadow: 0 0 6px rgba(229, 193, 88, 0.7);
+}
+
+.swiszta-test2 .gold-diamond-divider .diamond {
+  color: #ffcf40;
+  font-size: 1.05rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 207, 64, 0.95));
+  display: inline-block;
+}
+
+/* Tagline: "Care. Comfort. Excellence." */
+.swiszta-test2 .footer-tagline {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin: 2px 0;
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 0, 0, 0.85);
+}
+
+/* Social Buttons */
+.swiszta-test2 .footer-social-circle-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.swiszta-test2 .social-circle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #ffcf40;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(12, 1, 3, 0.75);
+  box-shadow: 0 0 14px rgba(255, 207, 64, 0.85), 0 0 28px rgba(229, 193, 88, 0.45), inset 0 0 8px rgba(255, 207, 64, 0.35);
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+}
+
+.swiszta-test2 .social-circle-btn .social-txt-f {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+  font-size: 1.45rem;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.swiszta-test2 .social-circle-btn .social-txt-in {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #ffffff;
+  line-height: 1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.swiszta-test2 .social-circle-btn:hover {
+  background: #ffcf40;
+  color: #0b0204;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 22px rgba(255, 207, 64, 1), 0 8px 24px rgba(229, 193, 88, 0.8);
+  border-color: #ffffff;
+}
+
+.swiszta-test2 .social-circle-btn:hover .social-txt-f,
+.swiszta-test2 .social-circle-btn:hover .social-txt-in {
+  color: #0b0204;
+  text-shadow: none;
+}
+
+/* Titles for Column 2, 3, 4 */
+.swiszta-test2 .footer-col-title {
+  color: #f3a638;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  position: relative;
+  display: inline-block;
+}
+
+.swiszta-test2 .gold-title-underline {
+  width: 42px;
+  height: 2px;
+  background: #d4af37;
   margin-bottom: 20px;
 }
 
-.swiszta-test2 .footer-col a,
-.swiszta-test2 .footer-col p {
-  display: block;
-  font-size: 0.85rem;
-  margin-bottom: 12px;
-  line-height: 1.5;
+/* Quick Links Column */
+.swiszta-test2 .footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.swiszta-test2 .footer-col a {
+.swiszta-test2 .footer-links-list li {
+  margin-bottom: 11px;
+}
+
+.swiszta-test2 .footer-links-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 6px;
+}
+
+.swiszta-test2 .footer-links-list a .link-chevron {
+  color: #e53935;
+  transition: transform 0.25s ease;
+}
+
+.swiszta-test2 .footer-links-list a:hover {
+  color: #f3a638;
+  padding-left: 4px;
+}
+
+.swiszta-test2 .footer-links-list a:hover .link-chevron {
+  transform: translateX(4px);
+  color: #f3a638;
+}
+
+/* Our Services Column */
+.swiszta-test2 .footer-service-rows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.swiszta-test2 .footer-service-rows li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.swiszta-test2 .footer-service-rows li:last-child {
+  border-bottom: none;
+}
+
+.swiszta-test2 .svc-gold-icon {
+  color: #f3a638;
+  flex-shrink: 0;
+}
+
+.swiszta-test2 .footer-service-rows a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 0.88rem;
   transition: color 0.2s ease;
 }
 
-.swiszta-test2 .footer-col a:hover {
-  color: var(--gold-400);
+.swiszta-test2 .footer-service-rows a:hover {
+  color: #f3a638;
 }
 
-.swiszta-test2 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+/* Contact Column */
+.swiszta-test2 .footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.swiszta-test2 .footer-contact-list li {
   display: flex;
-  justify-content: space-between;
-  padding: 22px 24px;
-  font-size: 0.78rem;
-  flex-wrap: wrap;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
 }
 
-.swiszta-test2 .footer-links a:hover {
-  color: var(--gold-400);
+.swiszta-test2 .red-icon-ring {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #dc2626;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.swiszta-test2 .contact-text {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.swiszta-test2 .contact-text a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.swiszta-test2 .contact-text a:hover {
+  color: #f3a638;
+}
+
+/* Certifications Section */
+.swiszta-test2 .footer-certifications-section {
+  border-top: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 30px 0 35px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiszta-test2 .cert-header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.swiszta-test2 .cert-header-title .gold-rule {
+  flex: 1;
+  max-width: 250px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.swiszta-test2 .cert-title-txt {
+  color: #f3a638;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.swiszta-test2 .certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.swiszta-test2 .cert-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 20px;
+  border-right: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.swiszta-test2 .cert-card:last-child {
+  border-right: none;
+}
+
+.swiszta-test2 .cert-badge-ring {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.swiszta-test2 .green-badge {
+  background: linear-gradient(135deg, #15803d, #166534);
+  color: #ffffff;
+}
+
+.swiszta-test2 .orange-badge {
+  background: linear-gradient(135deg, #ea580c, #c2410c);
+  color: #ffffff;
+}
+
+.swiszta-test2 .red-badge {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  color: #ffffff;
+}
+
+.swiszta-test2 .blue-badge {
+  background: linear-gradient(135deg, #0284c7, #1e3a8a);
+  color: #ffffff;
+}
+
+.swiszta-test2 .cm3-txt {
+  font-weight: 800;
+  font-size: 0.85rem;
+  font-style: italic;
+  font-family: sans-serif;
+}
+
+.swiszta-test2 .cert-info .cert-code {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin-bottom: 2px;
+}
+
+.swiszta-test2 .cert-info .cert-desc {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.25;
+}
+
+/* Bottom Bar */
+.swiszta-test2 .footer-bottom-bar {
+  border-top: 1px solid #d4af37;
+  background: #090102;
+  padding: 16px 0;
+  position: relative;
+  box-shadow: 0 -4px 15px rgba(212, 175, 55, 0.15);
+}
+
+.swiszta-test2 .bottom-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  flex-wrap: wrap;
+}
+
+.swiszta-test2 .copyright-txt {
+  font-weight: 400;
+}
+
+.swiszta-test2 .v-sep {
+  color: #d4af37;
+  opacity: 0.6;
+}
+
+.swiszta-test2 .bottom-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swiszta-test2 .bottom-meta-item .meta-icon {
+  color: #dc2626;
+  flex-shrink: 0;
+}
+
+.swiszta-test2 .bottom-meta-item a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.swiszta-test2 .bottom-meta-item a:hover {
+  color: #f3a638;
+}
+
+.swiszta-test2 .bottom-end-mark {
+  margin-left: auto;
+}
+
+.swiszta-test2 .mini-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 16px;
+  height: 16px;
+}
+
+.swiszta-test2 .mini-tiles .tile {
+  background: #dc2626;
+  border-radius: 1px;
 }
 
 /* ============ Back to top ============ */
@@ -1736,3 +2259,789 @@
   border-color: var(--gold-500);
   box-shadow: 0 12px 28px -10px rgba(58, 13, 16, 0.15);
 }
+
+/* ============ About & Why Showcase Section (User Mockup Replica) ============ */
+.swiszta-test2 .about-showcase-section {
+  background: #ffffff;
+  padding: 70px 0 50px;
+  color: #1f2937;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.swiszta-test2 .about-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.swiszta-test2 .about-eyebrow-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.swiszta-test2 .eyebrow-text {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #9a111a;
+  text-transform: uppercase;
+}
+
+.swiszta-test2 .eyebrow-divider {
+  flex: 1;
+  max-width: 140px;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.swiszta-test2 .eyebrow-diamond {
+  color: #9a111a;
+  font-size: 0.85rem;
+}
+
+.swiszta-test2 .about-showcase-heading {
+  font-family: var(--font-heading), 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.14;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+.swiszta-test2 .red-heading-accent {
+  color: #9a111a;
+}
+
+.swiszta-test2 .about-showcase-desc {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.62;
+  color: #4b5563;
+  margin-bottom: 28px;
+  max-width: 580px;
+}
+
+.swiszta-test2 .about-pillars-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.swiszta-test2 .pillar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 10px;
+  border-right: 1px solid #f3f4f6;
+}
+
+.swiszta-test2 .pillar-item:last-child {
+  border-right: none;
+}
+
+.swiszta-test2 .pillar-icon {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiszta-test2 .pillar-label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.25;
+}
+
+.swiszta-test2 .pillar-label .black-txt {
+  font-weight: 800;
+  color: #111827;
+}
+
+.swiszta-test2 .pillar-label .red-txt {
+  font-weight: 800;
+  color: #9a111a;
+}
+
+.swiszta-test2 .about-showcase-btn {
+  background: #7a0c14;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(122, 12, 20, 0.35);
+  transition: all 0.25s ease;
+}
+
+.swiszta-test2 .about-showcase-btn:hover {
+  background: #9a111a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154, 17, 26, 0.45);
+}
+
+.swiszta-test2 .about-showcase-media {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.swiszta-test2 .about-lounge-img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  max-height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bottom Section Divider: WHY CHOOSE SWISZTA */
+.swiszta-test2 .why-choose-divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 40px 0 28px;
+}
+
+.swiszta-test2 .divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.swiszta-test2 .divider-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.swiszta-test2 .divider-content .diamond {
+  color: #9a111a;
+  font-size: 0.85rem;
+}
+
+.swiszta-test2 .divider-title {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #9a111a;
+  text-transform: uppercase;
+}
+
+/* 6 Why Choose Columns Grid */
+.swiszta-test2 .why-choose-features-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  padding: 10px 0;
+}
+
+.swiszta-test2 .why-feature-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-right: 1px solid #f3f4f6;
+}
+
+.swiszta-test2 .why-feature-card:last-child {
+  border-right: none;
+}
+
+.swiszta-test2 .why-feature-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiszta-test2 .why-feature-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.swiszta-test2 .why-feature-text .title {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.swiszta-test2 .why-feature-text .subtext {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+@media (max-width: 1024px) {
+  .swiszta-test2 .about-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .swiszta-test2 .why-choose-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .swiszta-test2 .why-feature-card {
+    border-right: none;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .swiszta-test2 .about-pillars-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .swiszta-test2 .why-choose-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Excellence In Every Detail Luxury Hero Banner Styles
+   ========================================================================== */
+
+.excellence-banner-section {
+  position: relative;
+  width: 100%;
+  min-height: 640px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.excellence-banner-section .banner-bg-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.excellence-banner-section .banner-bg-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+}
+
+/* Linear white fade overlay mask from pure white on left to transparent on right */
+.excellence-banner-section .banner-fade-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 38%,
+    rgba(255, 255, 255, 0.94) 48%,
+    rgba(255, 255, 255, 0.65) 62%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+}
+
+.excellence-banner-section .excellence-banner-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 60px;
+  padding-bottom: 70px;
+  width: 100%;
+}
+
+.excellence-banner-section .banner-left-card {
+  max-width: 560px;
+  text-align: left;
+}
+
+.excellence-banner-section .banner-logo-wrapper {
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.excellence-banner-section .excellence-headline {
+  font-family: 'Inter', 'Montserrat', -apple-system, sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.excellence-banner-section .excellence-headline .text-line {
+  display: block;
+}
+
+.excellence-banner-section .excellence-headline .red-text {
+  color: #A51C24;
+}
+
+.excellence-banner-section .excellence-headline .charcoal-text {
+  color: #222222;
+}
+
+.excellence-banner-section .red-accent-bar {
+  width: 84px;
+  height: 4px;
+  background-color: #A51C24;
+  margin-bottom: 24px;
+  border-radius: 2px;
+}
+
+.excellence-banner-section .excellence-subtext {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: #333333;
+  margin: 0 0 32px 0;
+  max-width: 490px;
+  font-weight: 500;
+}
+
+.excellence-banner-section .excellence-subtext .bold-red-text {
+  color: #A51C24;
+  font-weight: 800;
+}
+
+.excellence-banner-section .excellence-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.excellence-banner-section .excellence-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.excellence-banner-section .excellence-btn-primary {
+  background-color: #A51C24;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(165, 28, 36, 0.3);
+}
+
+.excellence-banner-section .excellence-btn-primary:hover {
+  background-color: #88141B;
+  box-shadow: 0 8px 26px rgba(165, 28, 36, 0.45);
+  transform: translateY(-2px);
+}
+
+.excellence-banner-section .excellence-btn-secondary {
+  background-color: #ffffff;
+  color: #222222;
+  border-color: #E2E8F0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.excellence-banner-section .excellence-btn-secondary:hover {
+  border-color: #A51C24;
+  color: #A51C24;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(165, 28, 36, 0.15);
+}
+
+.excellence-banner-section .excellence-btn-link {
+  background: transparent;
+  color: #A51C24;
+  padding: 14px 16px;
+  font-weight: 700;
+}
+
+.excellence-banner-section .excellence-btn-link:hover {
+  color: #721117;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .excellence-banner-section {
+    min-height: 540px;
+  }
+  .excellence-banner-section .banner-fade-mask {
+    background: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #ffffff 55%,
+      rgba(255, 255, 255, 0.85) 75%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  .excellence-banner-section {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  .excellence-banner-section .banner-bg-container {
+    opacity: 0.35;
+  }
+  .excellence-banner-section .banner-fade-mask {
+    background: rgba(255, 255, 255, 0.82);
+  }
+  .excellence-banner-section .banner-left-card {
+    max-width: 100%;
+  }
+  .excellence-banner-section .excellence-headline {
+    font-size: 2.6rem;
+  }
+}
+
+/* ==========================================================================
+   Luxury Careers & Stat Bar Banner Showcase (Matching Mockup Image 2)
+   ========================================================================== */
+
+.luxury-careers-wrapper {
+  width: 100%;
+  position: relative;
+  background-color: #3B0409;
+}
+
+/* TOP PART: Stat Bar */
+.luxury-stat-bar-container {
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  background-color: #3B0409;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #D4AF37;
+}
+
+.luxury-stat-bar-container .stat-bar-bell-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.luxury-stat-bar-container .bell-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% 65%;
+  display: block;
+}
+
+.luxury-stat-bar-container .stat-bar-burgundy-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.luxury-stat-bar-container .stat-gold-curve {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.luxury-stat-bar-container .stat-badges-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px 24px clamp(24px, 5vw, 80px);
+  width: 58%;
+  max-width: 880px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.luxury-stat-bar-container .stat-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.luxury-stat-bar-container .stat-gold-icon-ring {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid #E5C158;
+  background: radial-gradient(circle, rgba(122, 12, 22, 0.8) 0%, rgba(59, 4, 9, 0.9) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(229, 193, 88, 0.25);
+  flex-shrink: 0;
+}
+
+.luxury-stat-bar-container .stat-badge-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.luxury-stat-bar-container .stat-number {
+  font-family: 'Playfair Display', 'Cinzel', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.luxury-stat-bar-container .stat-label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #E5C158;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.luxury-stat-bar-container .stat-divider-line {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(180deg, rgba(229, 193, 88, 0) 0%, rgba(229, 193, 88, 0.6) 50%, rgba(229, 193, 88, 0) 100%);
+  margin: 0 8px;
+}
+
+/* BOTTOM PART: Full-Width Luxury Careers Banner with swiszta_team.png */
+.careers-banner-section-outer {
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.careers-banner-frame {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  background-color: #350408;
+  border-top: none;
+  border-bottom: 2px solid #D4AF37;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+}
+
+/* Right side team photo: swiszta_team.png shifted right so all 4 staff members are visible */
+.careers-swiszta-photo-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 82%;
+  z-index: 1;
+}
+
+.careers-swiszta-photo-wrapper .swiszta-team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+}
+
+/* Left side crimson curved layer */
+.careers-crimson-curved-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 38%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.careers-crimson-curved-layer .crimson-panel-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Left text overlay card */
+.careers-card-overlay {
+  position: relative;
+  z-index: 3;
+  width: 36%;
+  max-width: 480px;
+  padding: 44px 0 44px clamp(24px, 6vw, 100px);
+  text-align: left;
+}
+
+.careers-eyebrow-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.careers-eyebrow-text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #E5C158;
+  text-transform: uppercase;
+}
+
+.careers-gold-bar {
+  width: 38px;
+  height: 2px;
+  background-color: #E5C158;
+  border-radius: 1px;
+}
+
+.careers-heading-title {
+  font-family: 'Playfair Display', 'Cinzel', Georgia, serif;
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.careers-heading-title .title-white {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.careers-heading-title .title-gold {
+  background: linear-gradient(135deg, #FFF0B3 0%, #E5C158 50%, #B38B22 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.careers-description {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #EAE0D5;
+  margin: 0 0 28px 0;
+  max-width: 380px;
+  font-weight: 400;
+}
+
+.careers-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 30px;
+  background: linear-gradient(180deg, #9E0D1B 0%, #5E0810 100%);
+  border: 1.5px solid #E5C158;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(229, 193, 88, 0.15);
+  transition: all 0.3s ease;
+}
+
+.careers-explore-btn:hover {
+  background: linear-gradient(180deg, #BA1122 0%, #750A14 100%);
+  border-color: #FFF0B3;
+  box-shadow: 0 8px 24px rgba(229, 193, 88, 0.35);
+  transform: translateY(-2px);
+}
+
+.careers-explore-btn .btn-arrow {
+  color: #E5C158;
+  transition: transform 0.3s ease;
+}
+
+.careers-explore-btn:hover .btn-arrow {
+  transform: translateX(4px);
+  color: #FFFFFF;
+}
+
+/* Responsive adaptations */
+@media (max-width: 1024px) {
+  .careers-swiszta-photo-wrapper {
+    width: 90%;
+  }
+  .careers-crimson-curved-layer {
+    width: 44%;
+  }
+  .careers-card-overlay {
+    width: 40%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-banner-frame {
+    min-height: 460px;
+  }
+  .careers-swiszta-photo-wrapper {
+    width: 100%;
+    opacity: 0.3;
+  }
+  .careers-crimson-curved-layer {
+    width: 100%;
+  }
+  .careers-card-overlay {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+}
+
+
+
+
+
+
+
