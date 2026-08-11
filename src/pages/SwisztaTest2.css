@@ -2832,6 +2832,9 @@
     min-height: auto;
     padding: 48px 0;
   }
+  .excellence-banner-section .banner-logo-wrapper {
+    display: none;
+  }
   .excellence-banner-section .banner-bg-container {
     opacity: 1;
   }
