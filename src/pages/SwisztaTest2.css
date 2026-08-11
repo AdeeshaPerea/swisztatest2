@@ -2110,10 +2110,43 @@
     grid-template-columns: 1fr;
   }
   .swiszta-test2 .stat-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 12px;
+    column-gap: 8px;
+    padding: 0 8px;
   }
   .swiszta-test2 .stat {
+    padding: 6px 8px;
+    gap: 8px;
+    justify-content: flex-start;
+    border-right: 1px solid rgba(255, 255, 255, 0.16);
     border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+  .swiszta-test2 .stat:nth-child(even) {
+    border-right: none;
+  }
+  .swiszta-test2 .stat:nth-child(5),
+  .swiszta-test2 .stat:nth-child(6) {
+    border-bottom: none;
+  }
+  .swiszta-test2 .stat-icon-wrapper svg {
+    width: 26px;
+    height: 26px;
+  }
+  .swiszta-test2 .stat-info {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  .swiszta-test2 .stat-info strong {
+    font-size: 1.3rem;
+  }
+  .swiszta-test2 .stat-info small {
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    word-break: break-word;
+    white-space: normal;
   }
   .swiszta-test2 .nav-cta {
     display: none;
@@ -2123,6 +2156,24 @@
   }
   .swiszta-test2 .footer-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .swiszta-test2 .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    padding: 0 4px;
+  }
+  .swiszta-test2 .stat {
+    padding: 6px 4px;
+    gap: 6px;
+  }
+  .swiszta-test2 .stat-info strong {
+    font-size: 1.18rem;
+  }
+  .swiszta-test2 .stat-info small {
+    font-size: 0.54rem;
   }
 }
 
@@ -2580,7 +2631,7 @@
   position: relative;
   width: 100%;
   min-height: 640px;
-  background-color: #ffffff;
+  background-color: #0c0204;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -2603,18 +2654,18 @@
   display: block;
 }
 
-/* Linear white fade overlay mask from pure white on left to transparent on right */
+/* Linear dark shadow vignette fade overlay mask from deep dark burgundy on left to transparent on right */
 .excellence-banner-section .banner-fade-mask {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    #ffffff 0%,
-    #ffffff 38%,
-    rgba(255, 255, 255, 0.94) 48%,
-    rgba(255, 255, 255, 0.65) 62%,
-    rgba(255, 255, 255, 0.15) 80%,
-    rgba(255, 255, 255, 0) 100%
+    #0c0204 0%,
+    #0c0204 35%,
+    rgba(12, 2, 4, 0.95) 48%,
+    rgba(12, 2, 4, 0.7) 62%,
+    rgba(12, 2, 4, 0.2) 82%,
+    transparent 100%
   );
   z-index: 2;
 }
@@ -2653,18 +2704,22 @@
   display: block;
 }
 
-.excellence-banner-section .excellence-headline .red-text {
-  color: #A51C24;
+.excellence-banner-section .excellence-headline .gold-text {
+  background: linear-gradient(135deg, #FFF0B3 0%, #E5C158 50%, #B38B22 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
 }
 
-.excellence-banner-section .excellence-headline .charcoal-text {
-  color: #222222;
+.excellence-banner-section .excellence-headline .white-text {
+  color: #FFFFFF;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
 }
 
 .excellence-banner-section .red-accent-bar {
   width: 84px;
   height: 4px;
-  background-color: #A51C24;
+  background-color: #E5C158;
   margin-bottom: 24px;
   border-radius: 2px;
 }
@@ -2673,14 +2728,15 @@
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 1.15rem;
   line-height: 1.55;
-  color: #333333;
+  color: #E2E8F0;
   margin: 0 0 32px 0;
   max-width: 490px;
-  font-weight: 500;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .excellence-banner-section .excellence-subtext .bold-red-text {
-  color: #A51C24;
+  color: #F3D68C;
   font-weight: 800;
 }
 
@@ -2708,40 +2764,45 @@
 }
 
 .excellence-banner-section .excellence-btn-primary {
-  background-color: #A51C24;
+  background: linear-gradient(180deg, #9E0D1B 0%, #5E0810 100%);
   color: #ffffff;
-  box-shadow: 0 6px 20px rgba(165, 28, 36, 0.3);
+  border: 1.5px solid #E5C158;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(229, 193, 88, 0.2);
 }
 
 .excellence-banner-section .excellence-btn-primary:hover {
-  background-color: #88141B;
-  box-shadow: 0 8px 26px rgba(165, 28, 36, 0.45);
+  background: linear-gradient(180deg, #BA1122 0%, #750A14 100%);
+  border-color: #FFF0B3;
+  box-shadow: 0 8px 26px rgba(229, 193, 88, 0.35);
   transform: translateY(-2px);
 }
 
 .excellence-banner-section .excellence-btn-secondary {
-  background-color: #ffffff;
-  color: #222222;
-  border-color: #E2E8F0;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .excellence-banner-section .excellence-btn-secondary:hover {
-  border-color: #A51C24;
-  color: #A51C24;
+  border-color: #E5C158;
+  color: #E5C158;
+  background-color: rgba(255, 255, 255, 0.18);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(165, 28, 36, 0.15);
+  box-shadow: 0 6px 20px rgba(229, 193, 88, 0.25);
 }
 
 .excellence-banner-section .excellence-btn-link {
   background: transparent;
-  color: #A51C24;
+  color: #E5C158;
   padding: 14px 16px;
   font-weight: 700;
 }
 
 .excellence-banner-section .excellence-btn-link:hover {
-  color: #721117;
+  color: #FFF0B3;
   text-decoration: underline;
 }
 
@@ -2759,9 +2820,9 @@
   .excellence-banner-section .banner-fade-mask {
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.88) 0%,
-      rgba(255, 255, 255, 0.72) 60%,
-      rgba(255, 255, 255, 0.45) 100%
+      rgba(12, 2, 4, 0.94) 0%,
+      rgba(12, 2, 4, 0.8) 60%,
+      rgba(12, 2, 4, 0.45) 100%
     );
   }
 }
@@ -2780,9 +2841,9 @@
   .excellence-banner-section .banner-fade-mask {
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.85) 0%,
-      rgba(255, 255, 255, 0.65) 65%,
-      rgba(255, 255, 255, 0.35) 100%
+      rgba(12, 2, 4, 0.92) 0%,
+      rgba(12, 2, 4, 0.78) 65%,
+      rgba(12, 2, 4, 0.4) 100%
     );
   }
   .excellence-banner-section .banner-left-card {

@@ -47,20 +47,20 @@ export default function ExcellenceBanner({
       {/* Main Content Area */}
       <div className="excellence-banner-content container">
         <div className="banner-left-card">
-          {/* Official SWISZTA Logo Header with Accent Lines */}
+          {/* Official SWISZTA Logo Header with Gold Accent Lines */}
           <div className="banner-logo-wrapper">
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '16px' }}>
-              <div style={{ width: '60px', height: '2px', backgroundColor: '#A51C24' }}></div>
-              <Logo size="md" />
-              <div style={{ width: '60px', height: '2px', backgroundColor: '#A51C24' }}></div>
+              <div style={{ width: '60px', height: '2px', backgroundColor: '#E5C158' }}></div>
+              <Logo size="md" variant="dark" />
+              <div style={{ width: '60px', height: '2px', backgroundColor: '#E5C158' }}></div>
             </div>
           </div>
 
           {/* Main Headline */}
           <h1 className="excellence-headline">
-            <span className="text-line red-text">EXCELLENCE</span>
-            <span className="text-line charcoal-text">IN EVERY</span>
-            <span className="text-line red-text">DETAIL</span>
+            <span className="text-line gold-text">EXCELLENCE</span>
+            <span className="text-line white-text">IN EVERY</span>
+            <span className="text-line gold-text">DETAIL</span>
           </h1>
 
           {/* Solid Red Underline Bar */}
@@ -89,7 +89,7 @@ export default function ExcellenceBanner({
                 className="excellence-btn excellence-btn-secondary" 
                 onClick={onOpenVideo}
               >
-                <Play size={15} fill="#A51C24" color="#A51C24" />
+                <Play size={15} fill="#E5C158" color="#E5C158" />
                 <span>WATCH VIDEO</span>
               </button>
             )}
