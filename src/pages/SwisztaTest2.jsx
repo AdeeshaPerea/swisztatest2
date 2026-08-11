@@ -206,8 +206,9 @@ export default function SwisztaTest2({
             <a href="mailto:enquiry@swiszta.com">
               <Mail size={13} /> enquiry@swiszta.com
             </a>
-            <a href="tel:+912269141200">
-              <Phone size={13} /> +91 22 6914 1200
+            <a href="tel:+912269141200" className="phone-highlight-link">
+              <Phone size={15} className="phone-icon" />
+              <span className="phone-number-text">+91 22 6914 1200</span>
             </a>
           </div>
         </div>
@@ -493,8 +494,8 @@ export default function SwisztaTest2({
             {/* Right Media Frame - Grand Hotel Lounge Image */}
             <div className="about-showcase-media">
               <img 
-                src="/images/footer_lounge_bg.png" 
-                alt="SWISZTA Grand Hotel Lounge &amp; Dining Hall" 
+                src="/images/swiszta_trust_excellence_lounge.jpg" 
+                alt="SWISZTA 50+ Years of Trust &amp; Excellence Grand Hotel Lounge" 
                 className="about-lounge-img"
               />
             </div>
