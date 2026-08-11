@@ -21,16 +21,25 @@ export default function ExcellenceBanner({
 }) {
   return (
     <section className={`excellence-banner-section ${className}`} style={style}>
-      {/* Background Image Container */}
+      {/* Background Video Container */}
       <div className="banner-bg-container">
-        <img 
-          src="/images/luxury_reception_banner.png" 
-          alt="Luxury Hotel Reception Lobby" 
-          className="banner-bg-photo"
-          onError={(e) => {
-            e.target.src = '/images/reception_frontdesk.jpg';
-          }}
-        />
+        <video 
+          className="banner-bg-video"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          poster="/images/luxury_reception_banner.png"
+        >
+          <source src="/videos/swiszta_brand_video.mp4" type="video/mp4" />
+          <source src="/videos/hospitality_showcase.mp4" type="video/mp4" />
+          <source src="/videos/hotel_services_hero.mp4" type="video/mp4" />
+          <img 
+            src="/images/luxury_reception_banner.png" 
+            alt="Luxury Hotel Reception Lobby" 
+            className="banner-bg-photo"
+          />
+        </video>
         {/* Soft Left-to-Right Fade Overlay Mask */}
         <div className="banner-fade-mask"></div>
       </div>

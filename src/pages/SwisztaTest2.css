@@ -2594,7 +2594,8 @@
   z-index: 1;
 }
 
-.excellence-banner-section .banner-bg-photo {
+.excellence-banner-section .banner-bg-photo,
+.excellence-banner-section .banner-bg-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
