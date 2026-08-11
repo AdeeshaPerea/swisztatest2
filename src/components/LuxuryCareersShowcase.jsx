@@ -123,8 +123,8 @@ export default function LuxuryCareersShowcase({ onExploreCareers }) {
                   <stop offset="100%" stopColor="#B38B22" />
                 </linearGradient>
               </defs>
-              <path d="M0,0 L78,0 C92,30 82,70 54,100 L0,100 Z" fill="url(#crimsonSolidGrad)" />
-              <path d="M0,0 L78,0 C92,30 82,70 54,100" stroke="url(#goldCurveStroke)" strokeWidth="2.2" fill="none" />
+              <path d="M0,0 L76,0 C54,28 54,72 72,100 L0,100 Z" fill="url(#crimsonSolidGrad)" />
+              <path d="M0,0 L76,0 C54,28 54,72 72,100" stroke="url(#goldCurveStroke)" strokeWidth="2.2" fill="none" />
             </svg>
           </div>
 
@@ -136,8 +136,9 @@ export default function LuxuryCareersShowcase({ onExploreCareers }) {
             </div>
 
             <h2 className="careers-heading-title">
-              <span className="title-white">Build a Career in</span>
-              <span className="title-gold">Hospitality Excellence</span>
+              <span className="title-white">Build a Career</span>
+              <span className="title-gold">in Hospitality</span>
+              <span className="title-gold">Excellence</span>
             </h2>
 
             <p className="careers-description">
