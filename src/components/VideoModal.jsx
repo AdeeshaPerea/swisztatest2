@@ -75,8 +75,6 @@ export default function VideoModal({ isOpen, onClose }) {
             style={{ width: '100%', maxHeight: '75vh', display: 'block' }}
           >
             <source src="/videos/swiszta_brand_video.mp4" type="video/mp4" />
-            <source src="/videos/hospitality_showcase.mp4" type="video/mp4" />
-            <source src="/videos/hotel_services_hero.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

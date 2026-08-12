@@ -32,8 +32,6 @@ export default function ExcellenceBanner({
           poster="/images/luxury_reception_banner.png"
         >
           <source src="/videos/swiszta_brand_video.mp4" type="video/mp4" />
-          <source src="/videos/hospitality_showcase.mp4" type="video/mp4" />
-          <source src="/videos/hotel_services_hero.mp4" type="video/mp4" />
           <img 
             src="/images/luxury_reception_banner.png" 
             alt="Luxury Hotel Reception Lobby" 
