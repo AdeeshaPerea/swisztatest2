@@ -2705,17 +2705,16 @@
   display: block;
 }
 
-/* Linear dark shadow vignette fade overlay mask from deep dark burgundy on left to transparent on right */
+/* Soft vignette overlay mask with low opacity so background video is visible throughout */
 .excellence-banner-section .banner-fade-mask {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    #0c0204 0%,
-    #0c0204 35%,
-    rgba(12, 2, 4, 0.95) 48%,
-    rgba(12, 2, 4, 0.7) 62%,
-    rgba(12, 2, 4, 0.2) 82%,
+    rgba(12, 2, 4, 0.55) 0%,
+    rgba(12, 2, 4, 0.45) 45%,
+    rgba(12, 2, 4, 0.25) 70%,
+    rgba(12, 2, 4, 0.1) 85%,
     transparent 100%
   );
   z-index: 2;
@@ -2871,9 +2870,9 @@
   .excellence-banner-section .banner-fade-mask {
     background: linear-gradient(
       180deg,
-      rgba(12, 2, 4, 0.94) 0%,
-      rgba(12, 2, 4, 0.8) 60%,
-      rgba(12, 2, 4, 0.45) 100%
+      rgba(12, 2, 4, 0.6) 0%,
+      rgba(12, 2, 4, 0.45) 60%,
+      rgba(12, 2, 4, 0.25) 100%
     );
   }
 }
@@ -2895,9 +2894,9 @@
   .excellence-banner-section .banner-fade-mask {
     background: linear-gradient(
       180deg,
-      rgba(12, 2, 4, 0.92) 0%,
-      rgba(12, 2, 4, 0.78) 65%,
-      rgba(12, 2, 4, 0.4) 100%
+      rgba(12, 2, 4, 0.6) 0%,
+      rgba(12, 2, 4, 0.4) 65%,
+      rgba(12, 2, 4, 0.2) 100%
     );
   }
   .excellence-banner-section .banner-left-card {

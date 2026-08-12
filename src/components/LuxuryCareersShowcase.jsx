@@ -10,16 +10,16 @@ import { ArrowRight, Globe, ThumbsUp, ShieldCheck, Leaf } from 'lucide-react';
 export default function LuxuryCareersShowcase({ onExploreCareers }) {
   return (
     <div className="luxury-careers-wrapper">
-      
+
       {/* TOP PART: Luxury Burgundy & Gold Stat Bar */}
       <div className="luxury-stat-bar-container">
-        
+
         {/* Right Side Desk Bell Background */}
         <div className="stat-bar-bell-bg">
-          <img 
-            src="/images/gold_hotel_desk_bell.png" 
-            alt="Gold Hotel Reception Bell" 
-            className="bell-photo" 
+          <img
+            src="/images/gold_hotel_desk_bell.png"
+            alt="Gold Hotel Reception Bell"
+            className="bell-photo"
           />
         </div>
 
@@ -98,12 +98,12 @@ export default function LuxuryCareersShowcase({ onExploreCareers }) {
       {/* BOTTOM PART: 100% Full-Width Luxury Careers Banner with swiszta_team.png */}
       <div className="careers-banner-section-outer">
         <div className="careers-banner-frame">
-          
+
           {/* Right Side Team Background Photo: /images/swiszta_team.png */}
           <div className="careers-swiszta-photo-wrapper">
-            <img 
-              src="/images/swiszta_team.png" 
-              alt="Swiszta Hospitality Team" 
+            <img
+              src="/images/swiszta_team.png"
+              alt="Swiszta Hospitality Team"
               className="swiszta-team-img"
             />
           </div>
@@ -145,7 +145,7 @@ export default function LuxuryCareersShowcase({ onExploreCareers }) {
               Be part of a passionate team that takes pride in delivering extraordinary experiences every day.
             </p>
 
-            <button 
+            <button
               className="careers-explore-btn"
               onClick={onExploreCareers}
             >
